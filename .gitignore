@@ -1,0 +1,14 @@
+.DS_Store
+.env
+*.DotSettings.user
+
+.idea/
+.vs/
+.vscode/
+bin/
+obj/
+node_modules/
+
+# Ignore build artifacts
+**/bin/
+**/obj/
