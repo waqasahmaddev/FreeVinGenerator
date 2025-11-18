@@ -3,35 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Random VIN Generator</title>
-    <meta name="description" content="Free Random VIN Generator – instantly create valid sample VINs for testing, forms, and demos. Fast, accurate, and updated for 2025.">
+    <title>VIN Decoder - Decode Vehicle Identification Numbers</title>
+    <meta name="description" content="Free VIN Decoder - Decode any Vehicle Identification Number to reveal country, manufacturer, year, and check digit validation.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app.min.css">
 </head>
 <body>
 
 <header>
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <a href="index.html" class="logo">
-        <div class="logo-icon">V</div>
-        <span>VIN Generator</span>
-    </a>
-
-    <nav id="mainNav">
+    <nav>
         <ul>
-            <li class="active"><a href="index.html">VIN Generator</a></li>
-            <li><a href="vin-decoder.html">VIN Decoder</a></li>
+            <li><a href="index.html">VIN Generator</a></li>
+            <li class="active"><a href="vin-decoder.html">VIN Decoder</a></li>
             <li><a href="vin-validator.html">VIN Validator</a></li>
             <li><a href="bulk-vin-generator.html">Bulk Generator</a></li>
             <li><a href="what-is-a-vin.html">What is a VIN?</a></li>
         </ul>
     </nav>
-
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
         <svg class="sun-icon" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"></circle>
@@ -48,50 +36,84 @@
 </header>
 
 <main>
-    <!-- Top Banner Ad -->
     <div class="ad-container">
         <div class="ad-placeholder">Advertisement - 728x90</div>
     </div>
 
     <div class="container">
-        <h1>VIN Generator</h1>
-        <p class="subtitle">Generate valid VINs instantly for testing and demos</p>
+        <h1>VIN Decoder</h1>
+        <p class="subtitle">Decode any Vehicle Identification Number</p>
 
         <div class="card">
-            <div class="vin-display">
-                <input type="text" id="vin" readonly onclick="this.select()">
+            <div class="input-group">
+                <label for="vinInput">Enter VIN (17 characters)</label>
+                <input type="text" id="vinInput" placeholder="e.g., 1HGBH41JXMN109186" maxlength="17" oninput="decodeVIN()">
             </div>
 
             <div class="buttons">
-                <button class="btn btn-primary" onclick="generateVIN()">
+                <button class="btn btn-primary" onclick="decodeVIN()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4M12 8h.01"></path>
                     </svg>
-                    Generate New
+                    Decode VIN
                 </button>
-                <button class="btn btn-secondary" onclick="copyVIN()">
+                <button class="btn btn-secondary" onclick="clearDecoder()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
                     </svg>
-                    Copy VIN
+                    Clear
                 </button>
+            </div>
+
+            <div id="decodeResult" class="decode-result" style="display: none;">
+                <h3>Decoded Information</h3>
+                <div class="decode-item">
+                    <span class="decode-label">VIN:</span>
+                    <span class="decode-value" id="decodedVin">-</span>
+                </div>
+                <div class="decode-item">
+                    <span class="decode-label">Check Digit Valid:</span>
+                    <span class="decode-value" id="checkDigitStatus">-</span>
+                </div>
+                <div class="decode-item">
+                    <span class="decode-label">Country:</span>
+                    <span class="decode-value" id="country">-</span>
+                </div>
+                <div class="decode-item">
+                    <span class="decode-label">Manufacturer:</span>
+                    <span class="decode-value" id="manufacturer">-</span>
+                </div>
+                <div class="decode-item">
+                    <span class="decode-label">Model Year:</span>
+                    <span class="decode-value" id="modelYear">-</span>
+                </div>
+                <div class="decode-item">
+                    <span class="decode-label">Plant Code:</span>
+                    <span class="decode-value" id="plantCode">-</span>
+                </div>
+                <div class="decode-item">
+                    <span class="decode-label">Serial Number:</span>
+                    <span class="decode-value" id="serialNumber">-</span>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <strong>Note:</strong> This is a basic decoder showing general VIN information. For complete vehicle history, specifications, and detailed information, please use official services like NHTSA, Carfax, or AutoCheck.
             </div>
         </div>
     </div>
 
-    <!-- Bottom Banner Ad -->
     <div class="ad-container">
         <div class="ad-placeholder">Advertisement - 728x90</div>
     </div>
 </main>
 
-<!-- Sidebar Ad (Desktop only) -->
 <div class="ad-sidebar">
     <div class="ad-placeholder" style="writing-mode: vertical-rl; text-orientation: mixed;">Ad 160x600</div>
 </div>
 
-<!-- Scroll to Top Button -->
 <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
     <svg viewBox="0 0 24 24">
         <path d="M18 15l-6-6-6 6"/>
@@ -110,9 +132,8 @@
     </div>
 </footer>
 
-<div id="notification" class="notification">VIN copied to clipboard! ✓</div>
+<div id="notification" class="notification">Action completed! ✓</div>
 
-<script src="app.js"></script>
-
+<script src="app.min.js"></script>
 </body>
 </html>
