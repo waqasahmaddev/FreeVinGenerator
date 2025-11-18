@@ -1,0 +1,41 @@
+# robots.txt for FreeVinGenerator.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://freevingenerator.com/sitemap.xml
+
+# Block admin areas (if you have any)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /private/
+
+# Block search results pages (if you have search functionality)
+Disallow: /search
+Disallow: /*?s=
+Disallow: /*?search=
+
+# Block API endpoints (if you have any)
+Disallow: /api/
+
+# Allow all CSS, JS, and images for proper rendering
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl-delay (optional - only use if server is slow)
+# Crawl-delay: 1
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
