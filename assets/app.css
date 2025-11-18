@@ -122,7 +122,7 @@ header {
     color: var(--text-primary);
     text-decoration: none;
     letter-spacing: -0.5px;
-    z-index: 200;
+    z-index: 150;
 }
 
 .logo-icon {
@@ -142,8 +142,8 @@ header {
     display: none;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 8px;
     cursor: pointer;
     flex-direction: column;
@@ -152,7 +152,7 @@ header {
     gap: 5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    z-index: 200;
+    z-index: 150;
     position: absolute;
     left: 20px;
 }
@@ -162,7 +162,7 @@ header {
 }
 
 .mobile-menu-toggle span {
-    width: 22px;
+    width: 20px;
     height: 3px;
     background: white;
     border-radius: 2px;
@@ -195,7 +195,7 @@ header {
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    z-index: 200;
+    z-index: 150;
     position: absolute;
     right: 40px;
 }
@@ -604,7 +604,6 @@ h1 {
 .vin-display {
     background: var(--input-bg);
     border-radius: 12px;
-    padding: 25px;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
@@ -632,6 +631,7 @@ h1 {
     text-align: center;
     letter-spacing: 2px;
     cursor: pointer;
+    padding: 25px;
 }
 
 .buttons {
@@ -771,12 +771,12 @@ footer {
 
     .logo {
         display: flex;
-        z-index: 200;
+        z-index: 150;
     }
 
     .theme-toggle {
         right: 20px;
-        z-index: 200;
+        z-index: 150;
     }
 
     nav {
@@ -791,7 +791,7 @@ footer {
         padding-top: 80px;
         box-shadow: -5px 0 20px var(--shadow-color);
         transition: right 0.3s ease;
-        z-index: 150;
+        z-index: 200;
     }
 
     nav.active {
