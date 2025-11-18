@@ -65,8 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
         generateVIN();
     }
 
-    // Load theme preference
-    loadTheme();
+    // Apply dark mode to body if needed (html already has it from inline script)
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
 
     // Scroll to top button visibility
     window.addEventListener('scroll', handleScroll);
@@ -74,8 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Theme Toggle
 function toggleTheme() {
+    const html = document.documentElement;
     const body = document.body;
-    const isDark = body.classList.toggle('dark-mode');
+    const isDark = html.classList.toggle('dark-mode');
+    body.classList.toggle('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
@@ -109,43 +114,70 @@ function handleScroll() {
 function toggleMobileMenu() {
     const nav = document.getElementById('mainNav');
     const toggle = document.querySelector('.mobile-menu-toggle');
+    const body = document.body;
 
     nav.classList.toggle('active');
     toggle.classList.toggle('active');
-
-    // Prevent body scroll when menu is open
-    if (nav.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
+    body.classList.toggle('menu-open');
 }
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', function(event) {
     const nav = document.getElementById('mainNav');
     const toggle = document.querySelector('.mobile-menu-toggle');
+    const body = document.body;
+    const overlay = document.getElementById('menuOverlay');
 
     if (nav && toggle && nav.classList.contains('active')) {
-        if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+        // Check if click is outside nav and toggle button
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnToggle = toggle.contains(event.target);
+
+        if (!isClickInsideNav && !isClickOnToggle) {
             nav.classList.remove('active');
             toggle.classList.remove('active');
-            document.body.style.overflow = '';
+            body.classList.remove('menu-open');
+            if (overlay) {
+                overlay.classList.remove('active');
+            }
         }
     }
 });
 
 // Close mobile menu when link is clicked
 document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('menuOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const body = document.body;
+
+            if (nav && toggle) {
+                nav.classList.remove('active');
+                toggle.classList.remove('active');
+                body.classList.remove('menu-open');
+                overlay.classList.remove('active');
+            }
+        });
+    }
+
     const navLinks = document.querySelectorAll('#mainNav a');
+    const body = document.body;
+
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             const nav = document.getElementById('mainNav');
             const toggle = document.querySelector('.mobile-menu-toggle');
+            const overlay = document.getElementById('menuOverlay');
+
             if (nav && toggle && nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 toggle.classList.remove('active');
-                document.body.style.overflow = '';
+                body.classList.remove('menu-open');
+                if (overlay) {
+                    overlay.classList.remove('active');
+                }
             }
         });
     });
