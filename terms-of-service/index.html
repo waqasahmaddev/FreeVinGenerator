@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Terms of Service - Free VIN Generator</title>
-  <meta name="description" content="Terms of Service for FreeVinGenerator.com. Read our terms and conditions for using our VIN generation tool.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <title>Terms of Service - Free VIN Generator</title>
+    <meta name="description" content="Terms of Service for FreeVinGenerator.com. Read our terms and conditions for using our VIN generation tools.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://freevingenerator.com/terms-of-service/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
+    <link rel="apple-touch-icon" href="https://freevingenerator.com/assets/apple-touch-icon.png">
+
+    <!-- Theme Detection -->
     <script>
         (function() {
             const theme = localStorage.getItem('theme');
@@ -14,23 +25,27 @@
             }
         })();
     </script>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/app.min.css">
 </head>
 <body>
 
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <header>
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="FreeVinGenerator.com homepage">
         <div class="logo-icon">V</div>
         <span>VIN Generator</span>
     </a>
 
-    <nav id="mainNav">
+    <nav id="mainNav" aria-label="Main navigation">
         <ul>
             <li><a href="/">VIN Generator</a></li>
             <li><a href="/vin-decoder/">VIN Decoder</a></li>
@@ -41,7 +56,7 @@
     </nav>
 
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <svg class="sun-icon" viewBox="0 0 24 24">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -55,144 +70,144 @@
     </button>
 </header>
 
-<main>
-  <div class="info-content">
-    <h1>Terms of Service</h1>
-    <p class="subtitle">Last Updated: November 17, 2025</p>
-    
-    <div class="info-card">
-      <h2>Agreement to Terms</h2>
-      <p>By accessing and using FreeVinGenerator.com ("Website", "Service", "we", "us", or "our"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Service.</p>
+<main class="info-page">
+    <div class="info-content">
+        <h1>Terms of Service</h1>
+        <p class="subtitle">Last Updated: January 15, 2025</p>
 
-      <h3>Description of Service</h3>
-      <p>FreeVinGenerator.com provides a free online tool that generates random Vehicle Identification Numbers (VINs) that are mathematically valid according to industry standards. Our Service is intended for:</p>
-      <ul>
-        <li>Software testing and development</li>
-        <li>Educational purposes</li>
-        <li>Database population with sample data</li>
-        <li>Form testing and validation</li>
-        <li>Demonstrations and presentations</li>
-      </ul>
+        <article class="info-card">
+            <h2>Agreement to Terms</h2>
+            <p>By accessing and using FreeVinGenerator.com ("Website", "Service", "we", "us", or "our"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Service.</p>
 
-      <div class="highlight-box">
-        <strong>Important:</strong> Generated VINs are random and do not correspond to real vehicles. They should NEVER be used to represent actual vehicles or for any fraudulent purposes.
-      </div>
+            <h3>Description of Service</h3>
+            <p>FreeVinGenerator.com provides free online tools that generate, decode, and validate Vehicle Identification Numbers (VINs) that are mathematically valid according to ISO 3779 standards. Our Service is intended for:</p>
+            <ul>
+                <li>Software testing and development</li>
+                <li>Educational purposes</li>
+                <li>Database population with sample data</li>
+                <li>Form testing and validation</li>
+                <li>Demonstrations and presentations</li>
+            </ul>
 
-      <h3>Acceptable Use</h3>
-      <p>You agree to use our Service only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
-      <ul>
-        <li>Use generated VINs to misrepresent vehicle information or commit fraud</li>
-        <li>Use the Service to create fake vehicle documentation or titles</li>
-        <li>Claim that generated VINs represent real, existing vehicles</li>
-        <li>Use the Service in violation of any applicable laws or regulations</li>
-        <li>Attempt to interfere with, disrupt, or create an undue burden on the Service</li>
-        <li>Use automated systems to access the Service excessively</li>
-        <li>Attempt to gain unauthorized access to any portion of the Service</li>
-        <li>Remove, alter, or obscure any copyright or proprietary notices</li>
-      </ul>
+            <div class="highlight-box">
+                <strong>Important:</strong> Generated VINs are random and do not correspond to real vehicles. They should NEVER be used to represent actual vehicles or for any fraudulent purposes.
+            </div>
 
-      <h3>Intellectual Property Rights</h3>
-      <p>The Service, including its design, layout, graphics, and content (excluding user-generated content), is owned by FreeVinGenerator.com and is protected by copyright, trademark, and other intellectual property laws.</p>
-      <p>You may:</p>
-      <ul>
-        <li>Use generated VINs freely for testing and development purposes</li>
-        <li>Share links to our website</li>
-        <li>Reference our Service in your projects (with attribution)</li>
-      </ul>
+            <h3>Acceptable Use</h3>
+            <p>You agree to use our Service only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
+            <ul>
+                <li>Use generated VINs to misrepresent vehicle information or commit fraud</li>
+                <li>Use the Service to create fake vehicle documentation or titles</li>
+                <li>Claim that generated VINs represent real, existing vehicles</li>
+                <li>Use the Service in violation of any applicable laws or regulations</li>
+                <li>Attempt to interfere with, disrupt, or create an undue burden on the Service</li>
+                <li>Use automated systems to access the Service excessively</li>
+                <li>Attempt to gain unauthorized access to any portion of the Service</li>
+                <li>Remove, alter, or obscure any copyright or proprietary notices</li>
+            </ul>
 
-      <h3>Disclaimer of Warranties</h3>
-      <p>Our Service is provided on an "AS IS" and "AS AVAILABLE" basis without any warranties of any kind, either express or implied, including but not limited to:</p>
-      <ul>
-        <li>Warranties of merchantability or fitness for a particular purpose</li>
-        <li>Warranties that the Service will be uninterrupted or error-free</li>
-        <li>Warranties regarding the accuracy or reliability of generated VINs</li>
-        <li>Warranties that defects will be corrected</li>
-      </ul>
-      <p>While we strive to generate mathematically correct VINs, we do not guarantee their accuracy for any specific use case.</p>
+            <h3>Intellectual Property Rights</h3>
+            <p>The Service, including its design, layout, graphics, and content (excluding user-generated content), is owned by FreeVinGenerator.com and is protected by copyright, trademark, and other intellectual property laws.</p>
+            <p>You may:</p>
+            <ul>
+                <li>Use generated VINs freely for testing and development purposes</li>
+                <li>Share links to our website</li>
+                <li>Reference our Service in your projects (with attribution)</li>
+            </ul>
 
-      <h3>Limitation of Liability</h3>
-      <p>To the fullest extent permitted by law, FreeVinGenerator.com and its owners, operators, and affiliates shall not be liable for any:</p>
-      <ul>
-        <li>Indirect, incidental, special, consequential, or punitive damages</li>
-        <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
-        <li>Damages resulting from your use or inability to use the Service</li>
-        <li>Damages resulting from any unauthorized access to or use of our servers</li>
-        <li>Damages resulting from any errors or omissions in the Service</li>
-      </ul>
+            <h3>Disclaimer of Warranties</h3>
+            <p>Our Service is provided on an "AS IS" and "AS AVAILABLE" basis without any warranties of any kind, either express or implied, including but not limited to:</p>
+            <ul>
+                <li>Warranties of merchantability or fitness for a particular purpose</li>
+                <li>Warranties that the Service will be uninterrupted or error-free</li>
+                <li>Warranties regarding the accuracy or reliability of generated VINs</li>
+                <li>Warranties that defects will be corrected</li>
+            </ul>
+            <p>While we strive to generate mathematically correct VINs, we do not guarantee their accuracy for any specific use case.</p>
 
-      <h3>Indemnification</h3>
-      <p>You agree to indemnify, defend, and hold harmless FreeVinGenerator.com and its affiliates from any claims, damages, losses, liabilities, and expenses (including attorney fees) arising from:</p>
-      <ul>
-        <li>Your use of the Service</li>
-        <li>Your violation of these Terms</li>
-        <li>Your violation of any rights of another person or entity</li>
-        <li>Any misuse of generated VINs</li>
-      </ul>
+            <h3>Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, FreeVinGenerator.com and its owners, operators, and affiliates shall not be liable for any:</p>
+            <ul>
+                <li>Indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+                <li>Damages resulting from your use or inability to use the Service</li>
+                <li>Damages resulting from any unauthorized access to or use of our servers</li>
+                <li>Damages resulting from any errors or omissions in the Service</li>
+            </ul>
 
-      <h3>No Real Vehicle Information</h3>
-      <p>We explicitly state that:</p>
-      <ul>
-        <li>Generated VINs are random and do not represent real vehicles</li>
-        <li>We do not decode, verify, or provide information about actual VINs</li>
-        <li>We are not affiliated with any vehicle manufacturers or registration authorities</li>
-        <li>We cannot and do not provide vehicle history reports or verification services</li>
-      </ul>
+            <h3>Indemnification</h3>
+            <p>You agree to indemnify, defend, and hold harmless FreeVinGenerator.com and its affiliates from any claims, damages, losses, liabilities, and expenses (including attorney fees) arising from:</p>
+            <ul>
+                <li>Your use of the Service</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any rights of another person or entity</li>
+                <li>Any misuse of generated VINs</li>
+            </ul>
 
-      <h3>Third-Party Content and Links</h3>
-      <p>Our Service may contain links to third-party websites or services. We are not responsible for:</p>
-      <ul>
-        <li>The content, accuracy, or practices of third-party websites</li>
-        <li>Any damages or losses caused by third-party services</li>
-        <li>The privacy practices of third-party websites</li>
-      </ul>
-      <p>Your use of third-party websites is at your own risk and subject to their terms and conditions.</p>
+            <h3>No Real Vehicle Information</h3>
+            <p>We explicitly state that:</p>
+            <ul>
+                <li>Generated VINs are random and do not represent real vehicles</li>
+                <li>Our decoder shows structural information only, not actual vehicle data</li>
+                <li>We are not affiliated with any vehicle manufacturers or registration authorities</li>
+                <li>We cannot and do not provide vehicle history reports or verification services</li>
+            </ul>
 
-      <h3>Advertising</h3>
-      <p>Our Service displays advertisements through third-party advertising networks (including Google AdSense). We do not control the content of these advertisements and are not responsible for the products or services advertised.</p>
+            <h3>Third-Party Content and Links</h3>
+            <p>Our Service may contain links to third-party websites or services. We are not responsible for:</p>
+            <ul>
+                <li>The content, accuracy, or practices of third-party websites</li>
+                <li>Any damages or losses caused by third-party services</li>
+                <li>The privacy practices of third-party websites</li>
+            </ul>
+            <p>Your use of third-party websites is at your own risk and subject to their terms and conditions.</p>
 
-      <h3>Modifications to Service</h3>
-      <p>We reserve the right to:</p>
-      <ul>
-        <li>Modify, suspend, or discontinue the Service at any time without notice</li>
-        <li>Change these Terms at any time</li>
-        <li>Refuse service to anyone for any reason</li>
-      </ul>
-      <p>Continued use of the Service after changes constitutes acceptance of the modified Terms.</p>
+            <h3>Advertising</h3>
+            <p>Our Service displays advertisements through third-party advertising networks (including Google AdSense). We do not control the content of these advertisements and are not responsible for the products or services advertised.</p>
 
-      <h3>Termination</h3>
-      <p>We may terminate or suspend your access to the Service immediately, without prior notice, if you:</p>
-      <ul>
-        <li>Breach these Terms</li>
-        <li>Engage in fraudulent or illegal activities</li>
-        <li>Abuse or misuse the Service</li>
-      </ul>
+            <h3>Modifications to Service</h3>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify, suspend, or discontinue the Service at any time without notice</li>
+                <li>Change these Terms at any time</li>
+                <li>Refuse service to anyone for any reason</li>
+            </ul>
+            <p>Continued use of the Service after changes constitutes acceptance of the modified Terms.</p>
 
-      <h3>Governing Law</h3>
-      <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the Service shall be resolved in the appropriate courts.</p>
+            <h3>Termination</h3>
+            <p>We may terminate or suspend your access to the Service immediately, without prior notice, if you:</p>
+            <ul>
+                <li>Breach these Terms</li>
+                <li>Engage in fraudulent or illegal activities</li>
+                <li>Abuse or misuse the Service</li>
+            </ul>
 
-      <h3>Severability</h3>
-      <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+            <h3>Governing Law</h3>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the Service shall be resolved in the appropriate courts.</p>
 
-      <h3>Entire Agreement</h3>
-      <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and FreeVinGenerator.com regarding the use of our Service and supersede all prior agreements.</p>
+            <h3>Severability</h3>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
 
-      <h3>Contact Information</h3>
-      <p>If you have questions about these Terms of Service, please contact us:</p>
-      <div class="vin-structure">
-        <p><strong>Email:</strong> contact@freevingenerator.com</p>
-        <p style="margin-top: 10px;"><strong>Website:</strong> <a href="/contact/" style="color: #667eea; text-decoration: underline;">Contact Page</a></p>
-      </div>
+            <h3>Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and FreeVinGenerator.com regarding the use of our Service and supersede all prior agreements.</p>
 
-      <h3>Acknowledgment</h3>
-      <div class="highlight-box">
-        <strong>By using FreeVinGenerator.com, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong>
-      </div>
+            <h3>Contact Information</h3>
+            <p>If you have questions about these Terms of Service, please contact us:</p>
+            <div class="vin-structure">
+                <p><strong>Email:</strong> <a href="mailto:contact@freevingenerator.com" style="color: #667eea; text-decoration: underline;">contact@freevingenerator.com</a></p>
+                <p style="margin-top: 10px;"><strong>Website:</strong> <a href="/contact/" style="color: #667eea; text-decoration: underline;">Contact Page</a></p>
+            </div>
+
+            <h3>Acknowledgment</h3>
+            <div class="highlight-box">
+                <strong>By using FreeVinGenerator.com, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong>
+            </div>
+        </article>
     </div>
-  </div>
 </main>
 
 <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M18 15l-6-6-6 6"/>
     </svg>
 </button>
@@ -203,6 +218,7 @@
         <a href="/contact/">Contact</a>
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
     </div>
     <div class="footer-copyright">
         &copy; <span id="currentYear">2025</span> FreeVinGenerator.com. All rights reserved.
@@ -210,5 +226,6 @@
 </footer>
 
 <script src="/assets/app.min.js"></script>
+
 </body>
 </html>

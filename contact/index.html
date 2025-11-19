@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us - Free VIN Generator</title>
-  <meta name="description" content="Get in touch with FreeVinGenerator.com. We welcome your questions, feedback, and suggestions about our VIN generation tool.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <title>Contact Us - Free VIN Generator Support & Inquiries</title>
+    <meta name="description" content="Contact FreeVinGenerator.com for questions, feedback, technical support, or partnership inquiries. We typically respond within 24-48 hours.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://freevingenerator.com/contact/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freevingenerator.com/contact/">
+    <meta property="og:title" content="Contact Us - Free VIN Generator">
+    <meta property="og:description" content="Get in touch with FreeVinGenerator.com. We welcome your questions and feedback.">
+    <meta property="og:image" content="https://freevingenerator.com/assets/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
+    <link rel="apple-touch-icon" href="https://freevingenerator.com/assets/apple-touch-icon.png">
+
+    <!-- Preload Resources -->
+    <link rel="preload" href="/assets/app.min.css" as="style">
+    <link rel="preload" href="/assets/app.min.js" as="script">
+
+    <!-- Theme Detection -->
     <script>
         (function() {
             const theme = localStorage.getItem('theme');
@@ -14,23 +35,63 @@
             }
         })();
     </script>
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/app.min.css">
+
+    <!-- Structured Data - ContactPage -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Us",
+            "description": "Contact FreeVinGenerator.com for support, feedback, and inquiries",
+            "url": "https://freevingenerator.com/contact/",
+            "mainEntity": {
+                "@type": "Organization",
+                "name": "FreeVinGenerator.com",
+                "email": "contact@freevingenerator.com",
+                "url": "https://freevingenerator.com"
+            }
+        }
+    </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://freevingenerator.com"
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://freevingenerator.com/contact/"
+            }]
+        }
+    </script>
 </head>
 <body>
 
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <header>
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="FreeVinGenerator.com homepage">
         <div class="logo-icon">V</div>
         <span>VIN Generator</span>
     </a>
 
-    <nav id="mainNav">
+    <nav id="mainNav" aria-label="Main navigation">
         <ul>
             <li><a href="/">VIN Generator</a></li>
             <li><a href="/vin-decoder/">VIN Decoder</a></li>
@@ -41,7 +102,7 @@
     </nav>
 
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-        <svg class="sun-icon" viewBox="0 0 24 24">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -55,64 +116,73 @@
     </button>
 </header>
 
-<main>
-  <div class="info-content">
-    <h1>Contact Us</h1>
-    <p class="subtitle">We'd love to hear from you</p>
-    
-    <div class="info-card">
-      <h2>Get in Touch</h2>
-      <p>Have questions, feedback, or suggestions about FreeVinGenerator.com? We're here to help! Whether you need technical support, want to report an issue, or simply want to share your thoughts, we welcome your messages.</p>
-
-      <h3>Contact Information</h3>
-      <div class="vin-structure">
-        <p><strong>Email:</strong> contact@freevingenerator.com</p>
-        <p style="margin-top: 10px;"><strong>Response Time:</strong> We typically respond within 24-48 hours</p>
-      </div>
-
-      <h3>What We Can Help With</h3>
-      <ul>
-        <li><strong>Technical Questions:</strong> Issues with VIN generation, check digit calculations, or tool functionality</li>
-        <li><strong>Feature Requests:</strong> Suggestions for new features or improvements</li>
-        <li><strong>Bug Reports:</strong> Found something not working correctly? Let us know!</li>
-        <li><strong>Partnership Inquiries:</strong> Interested in collaboration or integration opportunities</li>
-        <li><strong>General Feedback:</strong> Share your experience and help us improve</li>
-        <li><strong>Educational Use:</strong> Questions about using our tool for teaching or learning</li>
-      </ul>
-
-      <h3>Before You Contact Us</h3>
-      <p>You might find answers to common questions on our <a href="/what-is-a-vin/" style="color: #667eea; text-decoration: underline;">What is a VIN?</a> page, which provides comprehensive information about Vehicle Identification Numbers, their structure, and usage.</p>
-
-      <div class="highlight-box">
-        <strong>Important Note:</strong> Please remember that our tool generates random VINs for testing purposes only. We cannot provide information about real vehicles, decode actual VINs, or verify vehicle histories. For such services, please consult official vehicle history providers or the manufacturer.
-      </div>
-
-      <h3>Advertising & Partnerships</h3>
-      <p>Interested in advertising opportunities or business partnerships? Please email us with details about your proposal, and we'll get back to you as soon as possible.</p>
-
-      <h3>Report an Issue</h3>
-      <p>If you've encountered a technical problem or bug, please include the following information in your message:</p>
-      <ul>
-        <li>Your web browser and version</li>
-        <li>Device type (desktop, mobile, tablet)</li>
-        <li>Operating system</li>
-        <li>Detailed description of the issue</li>
-        <li>Steps to reproduce the problem (if applicable)</li>
-      </ul>
-
-      <h3>Privacy</h3>
-      <p>We respect your privacy. Any information you share with us will only be used to respond to your inquiry. We do not sell, share, or distribute contact information. For more details, please review our <a href="/privacy-policy/" style="color: #667eea; text-decoration: underline;">Privacy Policy</a>.</p>
-
-      <div class="vin-structure">
-        <p><strong>Thank you for using FreeVinGenerator.com!</strong></p>
-        <p style="margin-top: 10px;">We appreciate your interest in our tool and look forward to hearing from you.</p>
-      </div>
+<main class="info-page">
+    <div class="ad-container">
+        <div class="ad-placeholder">Advertisement - 728x90</div>
     </div>
-  </div>
+
+    <div class="info-content">
+        <h1>Contact Us</h1>
+        <p class="subtitle">We'd love to hear from you</p>
+
+        <article class="info-card">
+            <h2>Get in Touch</h2>
+            <p>Have questions, feedback, or suggestions about FreeVinGenerator.com? We're here to help! Whether you need technical support, want to report an issue, or simply want to share your thoughts, we welcome your messages.</p>
+
+            <h3>Contact Information</h3>
+            <div class="vin-structure">
+                <p><strong>Email:</strong> <a href="mailto:contact@freevingenerator.com" style="color: #667eea; text-decoration: underline;">contact@freevingenerator.com</a></p>
+                <p style="margin-top: 10px;"><strong>Response Time:</strong> We typically respond within 24-48 hours</p>
+            </div>
+
+            <h3>What We Can Help With</h3>
+            <ul>
+                <li><strong>Technical Questions:</strong> Issues with VIN generation, check digit calculations, or tool functionality</li>
+                <li><strong>Feature Requests:</strong> Suggestions for new features or improvements</li>
+                <li><strong>Bug Reports:</strong> Found something not working correctly? Let us know!</li>
+                <li><strong>Partnership Inquiries:</strong> Interested in collaboration or integration opportunities</li>
+                <li><strong>General Feedback:</strong> Share your experience and help us improve</li>
+                <li><strong>Educational Use:</strong> Questions about using our tool for teaching or learning</li>
+            </ul>
+
+            <h3>Before You Contact Us</h3>
+            <p>You might find answers to common questions on our <a href="/what-is-a-vin/" style="color: #667eea; text-decoration: underline;">What is a VIN?</a> page, which provides comprehensive information about Vehicle Identification Numbers, their structure, and usage.</p>
+
+            <div class="highlight-box">
+                <strong>Important Note:</strong> Please remember that our tool generates random VINs for testing purposes only. We cannot provide information about real vehicles, decode actual vehicle histories, or verify VIN authenticity against databases. For such services, please consult official vehicle history providers or the manufacturer.
+            </div>
+
+            <h3>Advertising & Partnerships</h3>
+            <p>Interested in advertising opportunities or business partnerships? Please email us with details about your proposal, and we'll get back to you as soon as possible.</p>
+
+            <h3>Report an Issue</h3>
+            <p>If you've encountered a technical problem or bug, please include the following information in your message:</p>
+            <ul>
+                <li>Your web browser and version (e.g., Chrome 120, Firefox 121)</li>
+                <li>Device type (desktop, mobile, tablet)</li>
+                <li>Operating system (Windows, macOS, iOS, Android)</li>
+                <li>Detailed description of the issue</li>
+                <li>Steps to reproduce the problem (if applicable)</li>
+                <li>Screenshots if possible</li>
+            </ul>
+
+            <h3>Privacy</h3>
+            <p>We respect your privacy. Any information you share with us will only be used to respond to your inquiry. We do not sell, share, or distribute contact information to third parties. For more details, please review our <a href="/privacy-policy/" style="color: #667eea; text-decoration: underline;">Privacy Policy</a>.</p>
+
+            <div class="vin-structure">
+                <p><strong>Thank you for using FreeVinGenerator.com!</strong></p>
+                <p style="margin-top: 10px;">We appreciate your interest in our tools and look forward to hearing from you.</p>
+            </div>
+        </article>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-placeholder">Advertisement - 728x90</div>
+    </div>
 </main>
 
 <button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
-    <svg viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M18 15l-6-6-6 6"/>
     </svg>
 </button>
@@ -123,6 +193,7 @@
         <a href="/contact/">Contact</a>
         <a href="/privacy-policy/">Privacy Policy</a>
         <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/sitemap.xml">Sitemap</a>
     </div>
     <div class="footer-copyright">
         &copy; <span id="currentYear">2025</span> FreeVinGenerator.com. All rights reserved.
@@ -130,5 +201,6 @@
 </footer>
 
 <script src="/assets/app.min.js"></script>
+
 </body>
 </html>
