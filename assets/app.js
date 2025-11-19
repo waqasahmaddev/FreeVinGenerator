@@ -35,6 +35,8 @@ function generateVIN() {
     }
 }
 
+let notificationTimeout;
+
 function copyVIN() {
     const vinInput = document.getElementById('vin');
     if (!vinInput) return;
@@ -45,8 +47,19 @@ function copyVIN() {
 
     const notification = document.getElementById('notification');
     if (notification) {
-        notification.classList.add('show');
+        // Clear any existing timeout
+        clearTimeout(notificationTimeout);
+
+        // Remove class first to reset animation
+        notification.classList.remove('show');
+
+        // Add class after a tiny delay to restart animation
         setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+
+        // Set new timeout
+        notificationTimeout = setTimeout(() => {
             notification.classList.remove('show');
         }, 2500);
     }

@@ -7,12 +7,13 @@
 html {
     overflow-x: hidden;
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 40%);
-    min-height: 100vh;
+    min-height: 100%;
 }
 
-html.dark-mode {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+html.dark-mode body,
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) fixed;
+    background-size: 100% 100vh;
 }
 
 :root {
@@ -52,7 +53,8 @@ html.dark-mode {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: transparent;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+    background-size: 100% 100vh;
     color: var(--text-primary);
     min-height: 100vh;
     display: flex;
@@ -301,7 +303,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 60px 20px;
+    padding: 0 20px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
@@ -314,14 +316,16 @@ main {
 
 /* Hero Section - Takes Full Viewport on Load */
 .hero-section {
-    min-height: calc(100vh - 120px); /* Full viewport minus header/footer approximate height */
+    min-height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: 1000px;
-    padding-bottom: 165px;
+    padding-bottom: 110px;
+    padding-top: 0;
+    position: relative;
 }
 
 /* VIN Generator Tool Card - Keep Original Width */
@@ -1088,12 +1092,12 @@ footer {
     }
 
     .hero-section {
-        min-height: calc(100vh - 120px);
-        padding-bottom: 40px;
+        min-height: calc(100vh - 90px);
+        padding-bottom: 110px;
     }
 
     .scroll-hint {
-        bottom: 20px;
+        bottom: 0;
     }
 
     .container .card {
