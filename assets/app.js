@@ -195,3 +195,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function smoothScrollToContent() {
+    const contentSection = document.querySelector('.content-section');
+    if (contentSection) {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = contentSection.offsetTop - headerHeight - 20; // 20px extra spacing
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
