@@ -1124,12 +1124,12 @@ footer {
     }
 
     .hero-section {
-        min-height: calc(100vh - 115px);
+        min-height: calc(100vh - 110px);
         padding-bottom: 110px;
     }
 
     .scroll-hint {
-        bottom: 0;
+        bottom: 40px;
     }
 
     .container .card {
