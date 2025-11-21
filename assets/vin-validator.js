@@ -93,6 +93,12 @@ function validateVIN() {
     }
 
     detailsDiv.style.display = 'block';
+
+    gtag('event', 'vin_validated', {
+        'event_category': 'Tool Usage',
+        'event_label': 'VIN Validator',
+        'value': 1
+    });
 }
 
 function clearValidator() {

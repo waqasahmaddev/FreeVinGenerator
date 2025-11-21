@@ -33,6 +33,12 @@ function generateVIN() {
     if (vinInput) {
         vinInput.value = vin;
     }
+
+    gtag('event', 'vin_generated', {
+        'event_category': 'Tool Usage',
+        'event_label': 'Random VIN',
+        'value': 1
+    });
 }
 
 let notificationTimeout;

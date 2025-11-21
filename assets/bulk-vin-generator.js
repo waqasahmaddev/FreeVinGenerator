@@ -64,6 +64,12 @@ function generateBulkVINs() {
 
     // Show notification
     showNotification(`Generated ${count} VIN${count > 1 ? 's' : ''} successfully!`);
+
+    gtag('event', 'bulk_vin_generated', {
+        'event_category': 'Tool Usage',
+        'event_label': 'Bulk Generator',
+        'value': count // number of VINs generated
+    });
 }
 
 function copyAllVINs() {

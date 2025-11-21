@@ -125,6 +125,12 @@ function decodeVIN() {
     document.getElementById('serialNumber').textContent = serialNumber;
 
     document.getElementById('decodeResult').style.display = 'block';
+
+    gtag('event', 'vin_decoded', {
+        'event_category': 'Tool Usage',
+        'event_label': 'VIN Decoder',
+        'value': 1
+    });
 }
 
 function clearDecoder() {
