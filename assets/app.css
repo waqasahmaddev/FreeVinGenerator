@@ -927,6 +927,12 @@ h1 {
     border-color: #667eea;
 }
 
+.dark-mode .input-group select option,
+html.dark-mode .input-group select option {
+    background: #2d3748;
+    color: #e2e8f0;
+}
+
 /* ============================================
    DISCLAIMER & HIGHLIGHT BOXES
    ============================================ */
@@ -1468,5 +1474,70 @@ footer {
     .content-section {
         box-shadow: none;
         page-break-inside: avoid;
+    }
+}
+
+/* VIN QR Code Generator - Additional Styles */
+
+.qr-result {
+    margin-top: 30px;
+    padding: 30px;
+    background: var(--input-bg);
+    border-radius: 12px;
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+    overflow: hidden;
+}
+
+.qr-display {
+    display: inline-block;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.dark-mode .qr-display,
+html.dark-mode .qr-display {
+    background: white;
+}
+
+.qr-display canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto !important;
+}
+
+.qr-vin-display {
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+    .qr-result {
+        padding: 20px;
+    }
+
+    .qr-display {
+        padding: 15px;
+    }
+
+    .qr-vin-display {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 400px) {
+    .qr-vin-display {
+        font-size: 12px;
+        word-break: break-all;
     }
 }
