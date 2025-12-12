@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7S2PPXMJSS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7S2PPXMJSS');
+    </script>
+
+    <title>VIN Breakdown Visualizer - Interactive VIN Structure Diagram (2025)</title>
+    <meta name="description" content="Interactive VIN breakdown visualizer showing the complete structure of Vehicle Identification Numbers. Visualize WMI, VDS, check digit, year code, plant code, and serial number with color-coded diagrams and hover highlighting.">
+    <meta name="keywords" content="VIN breakdown, VIN structure, VIN visualizer, VIN diagram, vehicle identification number, WMI, VDS, VIN decoder visualization, interactive VIN breakdown">
+
+    <link rel="canonical" href="https://freevingenerator.com/vin-breakdown-visualizer/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freevingenerator.com/vin-breakdown-visualizer/">
+    <meta property="og:title" content="VIN Breakdown Visualizer - Interactive VIN Structure Diagram">
+    <meta property="og:description" content="Visualize and understand VIN structure with our interactive diagram. See WMI, VDS, check digit, year, plant, and serial number breakdown.">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "VIN Breakdown Visualizer",
+            "description": "Interactive VIN structure visualization tool",
+            "url": "https://freevingenerator.com/vin-breakdown-visualizer/",
+            "applicationCategory": "UtilityApplication",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') document.documentElement.classList.add('dark-mode');
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/app.min.css">
+</head>
+<body>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<header>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+    </button>
+
+    <a href="/" class="logo">
+        <div class="logo-icon">V</div>
+        <span>VIN Tools</span>
+    </a>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="/">VIN Generator</a></li>
+            <li><a href="/vin-decoder/">VIN Decoder</a></li>
+            <li><a href="/vin-validator/">VIN Validator</a></li>
+            <li><a href="/bulk-vin-generator/">Bulk Generator</a></li>
+            <li><a href="/vin-qr-code-generator/">QR Generator</a></li>
+            <li class="active"><a href="/vin-breakdown-visualizer/">Visualizer</a></li>
+            <li><a href="/what-is-a-vin/">What is a VIN?</a></li>
+        </ul>
+    </nav>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <svg class="sun-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+</header>
+
+<main>
+    <div class="hero-section">
+        <div class="container">
+            <h1>VIN Breakdown Visualizer</h1>
+            <p class="subtitle">Interactive visual diagram showing VIN structure and character meanings</p>
+
+            <div class="card">
+                <div class="input-group">
+                    <label for="vinInput">Enter VIN (17 characters)</label>
+                    <input type="text" id="vinInput" placeholder="e.g., 5YJSA1DG9DFP14705" maxlength="17" oninput="this.value = this.value.toUpperCase()">
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-primary" onclick="visualizeVIN()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Visualize
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearVisualization()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>
+                        </svg>
+                        Clear
+                    </button>
+                </div>
+
+                <div class="disclaimer">
+                    <strong>Interactive:</strong> Hover over boxes or characters to highlight related sections
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" onclick="smoothScrollToContent()">
+            <span>Learn More</span>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+    </div>
+
+    <div id="vinVisualization"></div>
+
+    <div class="ad-container">
+        <div class="ad-placeholder">Advertisement - 728x90</div>
+    </div>
+
+    <div class="container">
+        <article class="content-section">
+            <h2>Understanding VIN Structure Through Visualization</h2>
+            <p>The VIN Breakdown Visualizer provides an interactive, visual representation of how each character in a Vehicle Identification Number (VIN) relates to specific vehicle information.</p>
+
+            <h3>What the Visualizer Shows</h3>
+            <ul>
+                <li><strong>WMI (Positions 1-3)</strong> - World Manufacturer Identifier</li>
+                <li><strong>VDS (Positions 4-8)</strong> - Vehicle Descriptor Section</li>
+                <li><strong>Check Digit (Position 9)</strong> - Security validation</li>
+                <li><strong>Model Year (Position 10)</strong> - Year code</li>
+                <li><strong>Plant Code (Position 11)</strong> - Assembly plant</li>
+                <li><strong>Serial Number (Positions 12-17)</strong> - Production number</li>
+            </ul>
+
+            <h2>Related VIN Tools</h2>
+            <div class="related-tools">
+                <a href="/" class="tool-link">VIN Generator - Create random VINs</a>
+                <a href="/vin-decoder/" class="tool-link">VIN Decoder - Decode any VIN number</a>
+                <a href="/vin-validator/" class="tool-link">VIN Validator - Verify VIN validity</a>
+                <a href="/bulk-vin-generator/" class="tool-link">Bulk Generator - Generate multiple VINs</a>
+                <a href="/vin-qr-code-generator/" class="tool-link">QR Generator - Generate VIN QR codes</a>
+                <a href="/what-is-a-vin/" class="tool-link">What is a VIN? - Complete guide</a>
+            </div>
+        </article>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/terms-of-service/">Terms</a>
+    </div>
+    <div class="footer-copyright">
+        &copy; 2025 FreeVinGenerator.com
+    </div>
+</footer>
+
+<div id="notification" class="notification">Done! ✓</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="/assets/app.min.js"></script>
+</body>
+</html>

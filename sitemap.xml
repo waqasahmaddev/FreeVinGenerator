@@ -4,76 +4,92 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Homepage - VIN Generator -->
-<url>
-  <loc>https://freevingenerator.com/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
-</url>
+    <!-- Homepage - VIN Generator -->
+    <url>
+        <loc>https://freevingenerator.com/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-<!-- VIN Decoder -->
-<url>
-  <loc>https://freevingenerator.com/vin-decoder/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <!-- VIN Decoder -->
+    <url>
+        <loc>https://freevingenerator.com/vin-decoder/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-<!-- VIN Validator -->
-<url>
-  <loc>https://freevingenerator.com/vin-validator/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <!-- VIN Validator -->
+    <url>
+        <loc>https://freevingenerator.com/vin-validator/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-<!-- Bulk VIN Generator -->
-<url>
-  <loc>https://freevingenerator.com/bulk-vin-generator/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <!-- Bulk VIN Generator -->
+    <url>
+        <loc>https://freevingenerator.com/bulk-vin-generator/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-<!-- What is a VIN -->
-<url>
-  <loc>https://freevingenerator.com/what-is-a-vin/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
+    <!-- VIN QR Code Generator -->
+    <url>
+        <loc>https://freevingenerator.com/vin-qr-code-generator/</loc>
+        <lastmod>2025-12-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-<!-- About Page -->
-<url>
-  <loc>https://freevingenerator.com/about/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.5</priority>
-</url>
+    <!-- VIN Breakdown Visualizer -->
+    <url>
+        <loc>https://freevingenerator.com/vin-breakdown-visualizer/</loc>
+        <lastmod>2025-12-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 
-<!-- Contact Page -->
-<url>
-  <loc>https://freevingenerator.com/contact/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.5</priority>
-</url>
+    <!-- What is a VIN -->
+    <url>
+        <loc>https://freevingenerator.com/what-is-a-vin/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 
-<!-- Privacy Policy -->
-<url>
-  <loc>https://freevingenerator.com/privacy-policy/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
+    <!-- About Page -->
+    <url>
+        <loc>https://freevingenerator.com/about/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
 
-<!-- Terms of Service -->
-<url>
-  <loc>https://freevingenerator.com/terms-of-service/</loc>
-  <lastmod>2025-01-15</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.3</priority>
-</url>
+    <!-- Contact Page -->
+    <url>
+        <loc>https://freevingenerator.com/contact/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://freevingenerator.com/privacy-policy/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Terms of Service -->
+    <url>
+        <loc>https://freevingenerator.com/terms-of-service/</loc>
+        <lastmod>2025-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
 
 </urlset>

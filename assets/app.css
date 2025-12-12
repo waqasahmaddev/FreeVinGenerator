@@ -1541,3 +1541,131 @@ html.dark-mode .qr-display {
         word-break: break-all;
     }
 }
+
+
+/* VIN Breakdown Visualizer - Production CSS */
+
+/* Visualization Container */
+/* Visualization Container */
+#vinVisualization {
+    display: none;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto;
+    background: var(--card-bg);
+    padding: 60px 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-radius: 12px;
+    overflow-x: visible; /* Changed from auto */
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Add horizontal scroll only on small devices */
+@media (max-width: 1400px) {
+    #vinVisualization {
+        overflow-x: auto;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#vinSvg {
+    display: block;
+    margin: 0 auto;
+}
+
+/* SVG Element Styles */
+.vin-char-rect {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vin-char-rect:hover {
+    filter: brightness(0.8);
+}
+
+.vin-char-text {
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 36px;
+    fill: white;
+    pointer-events: none;
+}
+
+.info-box-rect {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-box-rect:hover {
+    filter: brightness(1.1);
+}
+
+.info-box-label {
+    font-size: 11px;
+    fill: white;
+    pointer-events: none;
+    font-family: Arial, sans-serif; /* Add this line */
+}
+
+.info-box-value {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    fill: white;
+    pointer-events: none;
+}
+
+.connecting-line {
+    stroke-width: 4;
+    pointer-events: none;
+}
+
+.underline {
+    stroke-width: 4;
+    pointer-events: none;
+}
+
+.highlight {
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255,255,255,0.8));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #vinVisualization {
+        padding: 40px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    #vinVisualization {
+        padding: 30px 10px;
+    }
+
+    .vin-char-text {
+        font-size: 32px;
+    }
+
+    .info-box-label {
+        font-size: 10px;
+    }
+
+    .info-box-value {
+        font-size: 12px;
+    }
+}
+
+/* Dark Mode */
+.dark-mode #vinVisualization,
+html.dark-mode #vinVisualization {
+    background: #1f2937;
+}

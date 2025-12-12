@@ -9,6 +9,12 @@ function generateQRCode() {
   const qrResult = document.getElementById('qrResult');
   const qrCanvas = document.getElementById('qrCanvas');
   const qrVinDisplay = document.getElementById('qrVinDisplay');
+
+  gtag('event', 'qr_generated', {
+      'event_category': 'Tool Usage',
+      'event_label': 'VIN QR Generator',
+      'value': 1
+  });
   
   // Validate VIN
   if (vin.length === 0) {
