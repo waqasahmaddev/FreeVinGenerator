@@ -272,8 +272,6 @@ function generateVIN() {
         });
     }
 
-    console.log(`Generated VIN: ${vin} (${pattern.years} ${pattern.make} ${pattern.model})`);
-
     return vin;
 }
 
@@ -316,7 +314,6 @@ function copyVIN() {
     navigator.clipboard.writeText(vinInput.value).then(() => {
         showNotification('VIN copied to clipboard!');
     }).catch(err => {
-        console.error('Failed to copy:', err);
         document.execCommand('copy');
         showNotification('VIN copied!');
     });
