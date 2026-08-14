@@ -41,11 +41,11 @@ The math runs like this. Every letter converts to a number using a fixed table. 
 
 One character stands in for the model year, and the code loops every 30 years. A few examples:
 
-| Code | Year | | Code | Year |
-|------|------|---|------|------|
-| A | 1980 / 2010 | | L | 1990 / 2020 |
-| B | 1981 / 2011 | | M | 1991 / 2021 |
-| S | 1995 / 2025 | | T | 1996 / 2026 |
+| Code | Year | Code | Year |
+|------|------|------|------|
+| A | 1980 / 2010 | L | 1990 / 2020 |
+| B | 1981 / 2011 | M | 1991 / 2021 |
+| S | 1995 / 2025 | T | 1996 / 2026 |
 
 The letters I, O, Q, U, Z and the number 0 never appear as a year. Because the cycle repeats, position seven settles the tie. If position seven is a number, the vehicle is from 1980 to 2009. If it is a letter, the vehicle is 2010 or newer. That one trick saves a lot of confusion when the year code could point to two different decades.
 
@@ -74,3 +74,12 @@ Want to try decoding your own car? The VIN shows up in a few reliable spots:
 The pattern sticks fastest when you decode a real number. Paste any 17-character VIN into our free [VIN Decoder](/vin-decoder/) and it breaks out the country, maker, model year, and check-digit result on the spot. Prefer to see it laid out visually? The [VIN Breakdown Visualizer](/vin-breakdown-visualizer/) maps every position onto the code so you can watch the sections light up.
 
 After you work through a handful, the rhythm feels obvious. Three characters for the maker, five for the vehicle, one to check the math, one for the year, one for the plant, and six for the serial. Seventeen characters, and now none of them are a mystery.
+
+## Keep Reading
+
+- [What a VIN Tells You: Decoding Make, Model, and Year](/blog/what-a-vin-tells-you/)
+- [VIN Model Year Codes: The Full Chart (1980-2031)](/blog/vin-model-year-codes-chart/)
+- [How to Check If a VIN Is Valid (and Spot a Cloned One)](/blog/how-to-check-if-a-vin-is-valid/)
+- [Where to Find Your VIN: Every Location on Your Vehicle](/blog/where-to-find-your-vin/)
+
+**Free VIN tools:** [VIN Generator](/) · [VIN Decoder](/vin-decoder/) · [VIN Validator](/vin-validator/) · [Bulk Generator](/bulk-vin-generator/) · [QR Code Generator](/vin-qr-code-generator/) · [Visualizer](/vin-breakdown-visualizer/)
