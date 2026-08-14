@@ -13,8 +13,29 @@
     <nav id="mainNav" aria-label="Main navigation">
         <ul>
             <li{% if page.active == 'home' %} class="active"{% endif %}><a href="/"{% if page.active == 'home' %} aria-current="page"{% endif %}>VIN Generator</a></li>
-            <li{% if page.active == 'tools' %} class="active"{% endif %}><a href="/tools/"{% if page.active == 'tools' %} aria-current="page"{% endif %}>Tools</a></li>
-            <li{% if page.active == 'blog' %} class="active"{% endif %}><a href="/blog/"{% if page.active == 'blog' %} aria-current="page"{% endif %}>Blog</a></li>
+            <li class="has-mega{% if page.active == 'tools' %} active{% endif %}">
+                <a href="/tools/" class="mega-trigger"{% if page.active == 'tools' %} aria-current="page"{% endif %} aria-haspopup="true">Tools
+                    <svg class="mega-caret" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="mega-menu">
+                    <div class="mega-inner">
+                        <div class="mega-intro">
+                            <h4>VIN Tools</h4>
+                            <p>Free tools to generate, decode, validate, and visualize any Vehicle Identification Number.</p>
+                            <a href="/tools/" class="mega-viewall">View all tools →</a>
+                        </div>
+                        <div class="mega-links">
+                            <a href="/"><strong>VIN Generator</strong><span>Create random valid VINs</span></a>
+                            <a href="/vin-decoder/"><strong>VIN Decoder</strong><span>Decode any VIN's details</span></a>
+                            <a href="/vin-validator/"><strong>VIN Validator</strong><span>Check VIN validity</span></a>
+                            <a href="/bulk-vin-generator/"><strong>Bulk Generator</strong><span>Generate VINs in bulk</span></a>
+                            <a href="/vin-qr-code-generator/"><strong>QR Code Generator</strong><span>Turn a VIN into a QR code</span></a>
+                            <a href="/vin-breakdown-visualizer/"><strong>Visualizer</strong><span>See VIN structure visually</span></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li{% if page.active == 'blog' %} class="active"{% endif %}><a href="/posts/"{% if page.active == 'blog' %} aria-current="page"{% endif %}>Blog</a></li>
             <li{% if page.active == 'whatisvin' %} class="active"{% endif %}><a href="/what-is-a-vin/"{% if page.active == 'whatisvin' %} aria-current="page"{% endif %}>What is a VIN?</a></li>
         </ul>
     </nav>

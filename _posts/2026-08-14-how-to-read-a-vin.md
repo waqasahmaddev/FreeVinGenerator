@@ -1,6 +1,7 @@
 ---
 title: "How to Read a VIN: What All 17 Characters Mean"
 date: 2026-08-14
+category: "VIN Guide"
 description: "A plain-English guide to reading a Vehicle Identification Number. Learn what each of the 17 VIN characters means, how the check digit works, and how to decode the model year."
 image: /assets/og-image.jpg
 author: "FreeVinGenerator Team"
