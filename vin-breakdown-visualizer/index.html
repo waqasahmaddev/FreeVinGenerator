@@ -1,35 +1,17 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7S2PPXMJSS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-7S2PPXMJSS');
-    </script>
-
-    <title>VIN Breakdown Visualizer - Interactive VIN Structure Diagram (2025)</title>
-    <meta name="description" content="Interactive VIN breakdown visualizer showing the complete structure of Vehicle Identification Numbers. Visualize WMI, VDS, check digit, year code, plant code, and serial number with color-coded diagrams and hover highlighting.">
-    <meta name="keywords" content="VIN breakdown, VIN structure, VIN visualizer, VIN diagram, vehicle identification number, WMI, VDS, VIN decoder visualization, interactive VIN breakdown">
-
-    <link rel="canonical" href="https://freevingenerator.com/vin-breakdown-visualizer/">
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://freevingenerator.com/vin-breakdown-visualizer/">
-    <meta property="og:title" content="VIN Breakdown Visualizer - Interactive VIN Structure Diagram">
-    <meta property="og:description" content="Visualize and understand VIN structure with our interactive diagram. See WMI, VDS, check digit, year, plant, and serial number breakdown.">
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
+---
+layout: "default"
+title: "VIN Breakdown Visualizer - Interactive VIN Structure Diagram (2025)"
+description: "Interactive VIN breakdown visualizer showing the complete structure of Vehicle Identification Numbers. Visualize WMI, VDS, check digit, year code, plant code, and serial number with color-coded diagrams and hover highlighting."
+keywords: "VIN breakdown, VIN structure, VIN visualizer, VIN diagram, vehicle identification number, WMI, VDS, VIN decoder visualization, interactive VIN breakdown"
+active: "visualizer"
+og_title: "VIN Breakdown Visualizer - Interactive VIN Structure Diagram"
+og_description: "Visualize and understand VIN structure with our interactive diagram. See WMI, VDS, check digit, year, plant, and serial number breakdown."
+ad_sidebar: false
+scroll_top: false
+notification: "Done! ✓"
+libs: ["https://d3js.org/d3.v7.min.js"]
+---
+<script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "WebApplication",
@@ -44,58 +26,6 @@
             }
         }
     </script>
-
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'dark') document.documentElement.classList.add('dark-mode');
-        })();
-    </script>
-
-    <link rel="stylesheet" href="/assets/app.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8817944753726221" crossorigin="anonymous"></script>
-</head>
-<body>
-
-<div class="menu-overlay" id="menuOverlay"></div>
-
-<header>
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
-    </button>
-
-    <a href="/" class="logo">
-        <div class="logo-icon">V</div>
-        <span>VIN Tools</span>
-    </a>
-
-    <nav id="mainNav">
-        <ul>
-            <li><a href="/">VIN Generator</a></li>
-            <li><a href="/vin-decoder/">VIN Decoder</a></li>
-            <li><a href="/vin-validator/">VIN Validator</a></li>
-            <li><a href="/bulk-vin-generator/">Bulk Generator</a></li>
-            <li><a href="/vin-qr-code-generator/">QR Generator</a></li>
-            <li class="active"><a href="/vin-breakdown-visualizer/">Visualizer</a></li>
-            <li><a href="/what-is-a-vin/">What is a VIN?</a></li>
-        </ul>
-    </nav>
-
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <svg class="sun-icon" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-    </button>
-</header>
-
 <main>
     <div class="hero-section">
         <div class="container">
@@ -198,22 +128,3 @@
         </article>
     </div>
 </main>
-
-<footer>
-    <div class="footer-links">
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/terms-of-service/">Terms</a>
-    </div>
-    <div class="footer-copyright">
-        &copy; 2025 FreeVinGenerator.com
-    </div>
-</footer>
-
-<div id="notification" class="notification">Done! ✓</div>
-
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="/assets/app.min.js"></script>
-</body>
-</html>

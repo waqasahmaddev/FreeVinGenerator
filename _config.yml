@@ -1,0 +1,27 @@
+# Site settings
+title: Free VIN Generator
+description: >-
+  Generate valid VIN numbers instantly for free. Create random, properly
+  formatted 17-character vehicle identification numbers for testing,
+  development, and educational purposes.
+url: "https://freevingenerator.com"
+
+# Shared IDs used across all pages
+ga_id: "G-7S2PPXMJSS"
+adsense_client: "ca-pub-8817944753726221"
+
+# Build settings
+# (no plugins so this stays compatible with GitHub Pages' native Jekyll build)
+
+# Files/folders that should NOT be copied into the built site
+exclude:
+  - README.md
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - docs
+  - .idea
+  - vendor

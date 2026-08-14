@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+{%- include head.html -%}
+</head>
+<body>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+{% include header.html %}
+{{ content }}
+{%- if page.ad_sidebar %}
+<div class="ad-sidebar" aria-label="Advertisement">
+    <div class="ad-placeholder" style="writing-mode: vertical-rl; text-orientation: mixed;">Ad 160x600</div>
+</div>
+{%- endif %}
+{%- if page.scroll_top %}
+<button class="scroll-to-top" onclick="scrollToTop()" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
+{%- endif %}
+
+{% include footer.html %}
+
+{%- for lib in page.libs %}
+<script src="{{ lib }}"></script>
+{%- endfor %}
+<script src="/assets/app.min.js"></script>
+{%- if page.notification %}
+<div id="notification" class="notification" role="alert" aria-live="polite">{{ page.notification }}</div>
+{%- endif %}
+
+</body>
+</html>
