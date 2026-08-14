@@ -1858,6 +1858,15 @@ html.dark-mode #vinVisualization {
     gap: 4px;
     padding: 0;
 }
+/* underline: drop it down to sit level with the other links' underlines,
+   and span just the "Tools" text (not the caret) so it matches */
+.mega-trigger::after {
+    bottom: -8px;
+}
+.has-mega:hover .mega-trigger::after,
+.has-mega.active .mega-trigger::after {
+    width: calc(100% - 20px);
+}
 .mega-caret {
     width: 13px;
     height: 13px;
@@ -1963,6 +1972,10 @@ html.dark-mode #vinVisualization {
     .mega-caret {
         display: none;
     }
+    /* mobile sidebar: give the "Tools" label the same padding as other nav items */
+    .mega-trigger {
+        padding: 18px 30px !important;
+    }
     .mega-menu {
         position: static;
         transform: none;
@@ -2016,6 +2029,19 @@ body.bg-plain {
     color: var(--text-secondary);
     font-size: 16px;
     padding: 20px 0;
+}
+
+/* Mobile: zero top gap on the plain white pages (header is ~70px on mobile) */
+@media (max-width: 768px) {
+    body.bg-plain {
+        padding-top: 70px;
+    }
+    .listing-main {
+        padding-top: 0;
+    }
+    .article-main {
+        padding-top: 0;
+    }
 }
 /* On the plain white listing, cards get a crisp border rather than heavy shadow */
 body.bg-plain .post-card {

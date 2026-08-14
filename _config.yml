@@ -18,7 +18,7 @@ defaults:
       type: posts
     values:
       layout: post
-      permalink: /posts/:title/
+      permalink: /blog/:title/
       og_type: article
       body_class: bg-plain
       ad_sidebar: true
