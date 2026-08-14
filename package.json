@@ -4,7 +4,10 @@
   "description": "**Free VIN Generator** is a simple, fast, and modern web tool that allows users to generate random **Vehicle Identification Numbers (VINs)** for testing, forms, or demonstration purposes. It is built with pure HTML, CSS, and JavaScript and hosted on **GitHub Pages**.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp && jekyll serve --livereload",
+    "serve": "jekyll serve",
+    "css": "gulp",
+    "build": "gulp && jekyll build"
   },
   "repository": {
     "type": "git",

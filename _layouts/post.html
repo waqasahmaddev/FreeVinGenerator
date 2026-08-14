@@ -1,0 +1,61 @@
+---
+layout: default
+---
+<main>
+    <div class="container">
+        <article class="content-section post-article">
+            <p class="post-breadcrumb">
+                <a href="/">Home</a> <span aria-hidden="true">›</span>
+                <a href="/blog/">Blog</a>
+            </p>
+
+            <h1 class="post-title">{{ page.title }}</h1>
+            <p class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                {%- if page.author %} <span aria-hidden="true">·</span> {{ page.author }}{% endif %}
+            </p>
+
+            {%- if page.image %}
+            <img class="post-hero" src="{{ page.image }}" alt="{{ page.title | escape }}" loading="lazy" width="1200" height="630">
+            {%- endif %}
+
+            {{ content }}
+
+            <p class="post-back"><a href="/blog/">← Back to all articles</a></p>
+        </article>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-placeholder">Advertisement - 728x90</div>
+    </div>
+</main>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "image": "{{ site.url }}{{ page.image | default: '/assets/og-image.jpg' }}",
+    "author": { "@type": "Organization", "name": {{ page.author | default: "FreeVinGenerator.com" | jsonify }} },
+    "publisher": {
+        "@type": "Organization",
+        "name": "FreeVinGenerator.com",
+        "logo": { "@type": "ImageObject", "url": "https://freevingenerator.com/assets/logo.png" }
+    },
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ site.url }}{{ page.url }}" }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "{{ site.url }}/blog/" },
+        { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ site.url }}{{ page.url }}" }
+    ]
+}
+</script>

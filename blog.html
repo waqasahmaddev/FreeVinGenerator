@@ -1,0 +1,48 @@
+---
+layout: default
+permalink: /blog/
+title: "VIN Blog - Guides, Tips & Vehicle Identification Insights"
+description: "Practical guides and articles about Vehicle Identification Numbers (VINs) - how to read, decode, validate, and understand VINs for cars, trucks, and motorcycles."
+active: blog
+breadcrumb: "Blog"
+ad_sidebar: true
+scroll_top: true
+notification: "Link copied! ✓"
+---
+<main>
+    <div class="page-hero">
+        <div class="container">
+            <h1>VIN Blog</h1>
+            <p class="subtitle">Guides, tips, and deep dives on Vehicle Identification Numbers.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <article class="content-section">
+            {%- if site.posts.size > 0 %}
+            <div class="post-grid">
+                {%- for post in site.posts %}
+                <a class="post-card" href="{{ post.url }}">
+                    <div class="post-card-thumb">
+                        <img src="{{ post.image | default: '/assets/og-image.jpg' }}" alt="{{ post.title | escape }}" loading="lazy" width="600" height="315">
+                    </div>
+                    <div class="post-card-body">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-card-date">{{ post.date | date: "%B %d, %Y" }}</time>
+                        <h2 class="post-card-title">{{ post.title }}</h2>
+                        <p class="post-card-excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 140 }}</p>
+                        <span class="post-card-more">Read article →</span>
+                    </div>
+                </a>
+                {%- endfor %}
+            </div>
+            {%- else %}
+            <h2>Articles are on the way</h2>
+            <p>We're publishing new VIN guides every week. Check back shortly, or explore our <a href="/tools/">free VIN tools</a> in the meantime.</p>
+            {%- endif %}
+        </article>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-placeholder">Advertisement - 728x90</div>
+    </div>
+</main>

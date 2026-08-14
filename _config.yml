@@ -10,8 +10,23 @@ url: "https://freevingenerator.com"
 ga_id: "G-7S2PPXMJSS"
 adsense_client: "ca-pub-8817944753726221"
 
-# Build settings
-# (no plugins so this stays compatible with GitHub Pages' native Jekyll build)
+# Blog / posts
+# Articles live in _posts/*.md and are published at /blog/<slug>/
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:title/
+      og_type: article
+      ad_sidebar: true
+      scroll_top: true
+
+# Plugins (all whitelisted by GitHub Pages' native Jekyll build)
+plugins:
+  - jekyll-sitemap   # auto-generates /sitemap.xml (includes every page + post)
+  - jekyll-feed      # auto-generates /feed.xml RSS for the blog
 
 # Files/folders that should NOT be copied into the built site
 exclude:

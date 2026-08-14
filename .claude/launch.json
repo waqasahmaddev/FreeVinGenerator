@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jekyll",
+      "runtimeExecutable": "C:\\Ruby33-x64\\bin\\jekyll.bat",
+      "runtimeArgs": ["serve", "--port", "4000", "--no-watch"],
+      "port": 4000
+    }
+  ]
+}

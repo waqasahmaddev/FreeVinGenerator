@@ -26,14 +26,14 @@
     <meta property="og:url" content="{{ canonical }}">
     <meta property="og:title" content="{{ page.og_title | default: page.title }}">
     <meta property="og:description" content="{{ page.og_description | default: page.description }}">
-    <meta property="og:image" content="{{ site.url }}{{ page.og_image | default: '/assets/og-image.jpg' }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.og_image | default: page.image | default: '/assets/og-image.jpg' }}">
     <meta property="og:site_name" content="FreeVinGenerator.com">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ canonical }}">
     <meta name="twitter:title" content="{{ page.twitter_title | default: page.og_title | default: page.title }}">
     <meta name="twitter:description" content="{{ page.twitter_description | default: page.og_description | default: page.description }}">
-    <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_image | default: '/assets/twitter-image.svg' }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ page.twitter_image | default: page.image | default: '/assets/twitter-image.svg' }}">
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%23667eea'/><stop offset='100%25' style='stop-color:%23764ba2'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle' font-family='Arial,sans-serif'>V</text></svg>">
     <link rel="apple-touch-icon" href="https://freevingenerator.com/assets/apple-touch-icon.png">
