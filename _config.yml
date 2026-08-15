@@ -32,6 +32,7 @@ plugins:
 # Files/folders that should NOT be copied into the built site
 exclude:
   - README.md
+  - CLAUDE.md
   - package.json
   - package-lock.json
   - gulpfile.js

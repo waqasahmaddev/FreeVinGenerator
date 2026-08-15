@@ -17,6 +17,11 @@ scroll_top: true
             "logo": "https://freevingenerator.com/assets/logo.png",
             "description": "Free online VIN generator, decoder, and validator tools for testing and development",
             "foundingDate": "2025",
+            "founder": {
+                "@type": "Person",
+                "name": "Waqas Ahmad",
+                "jobTitle": "Web Developer"
+            },
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "Customer Service",
@@ -47,67 +52,43 @@ scroll_top: true
     </div>
 
     <div class="info-content">
-        <h1>About Us</h1>
-        <p class="subtitle">Your trusted source for VIN generation, decoding, and validation</p>
+        <h1>About FreeVinGenerator.com</h1>
+        <p class="subtitle">Free VIN tools and plain-English guides, built by developers</p>
 
         <article class="info-card">
-            <h2>Welcome to FreeVinGenerator.com</h2>
-            <p>FreeVinGenerator.com is a free online platform providing comprehensive VIN tools for testing, development, and educational purposes. We help developers, testers, students, and professionals work with Vehicle Identification Numbers through our suite of free tools.</p>
+            <h2>Why This Site Exists</h2>
+            <p>FreeVinGenerator.com started as an internal tool. We are a small team of software developers, and we kept hitting the same wall: building and testing vehicle-related applications means you need realistic Vehicle Identification Numbers, and the options were all bad. Paid services, incomplete data, or generators that spat out numbers that failed validation the moment you used them.</p>
+            <p>So we wrote our own. It follows the ISO 3779 standard and produces a correct check digit every time. It saved us enough headaches on our own projects that we cleaned it up and put it online for free. The decoder, validator, and the rest grew from the same need. The blog came later, once we realized how many people were searching for straight answers about VINs and finding thin, confusing pages instead.</p>
 
-            <h3>Our Mission</h3>
-            <p>Our mission is to provide simple, fast, and reliable VIN tools that comply with ISO 3779 international standards. We understand the need for accurate test data in software development, form testing, database population, and educational demonstrations.</p>
+            <h3>Who Runs This Site</h3>
+            <p>FreeVinGenerator is built and maintained by <strong>Waqas Ahmad</strong>, a web developer with more than five years of experience building and testing web applications. The generator started as a tool he needed for his own projects. He still writes the code, checks the data against the ISO 3779 standard, and edits every guide on the blog. If something here is wrong, fixing it is his job, and you can reach him through the <a href="/contact/">contact page</a>.</p>
 
-            <h3>What We Offer</h3>
+            <h3>What We Publish</h3>
+            <p>Two things: free tools, and honest guides.</p>
             <ul>
-                <li><strong>VIN Generator:</strong> Create valid 17-character VINs with correct check digits instantly</li>
-                <li><strong>VIN Decoder:</strong> Decode any VIN to reveal manufacturer, country, year, and more</li>
-                <li><strong>VIN Validator:</strong> Verify VIN format and check digit accuracy</li>
-                <li><strong>Bulk Generator:</strong> Generate up to 1000 VINs at once with CSV/TXT download</li>
-                <li><strong>Educational Resources:</strong> Comprehensive VIN structure and standards information</li>
-                <li><strong>100% Free:</strong> No registration, sign-up, or payment required</li>
-                <li><strong>Privacy Focused:</strong> No data collection or storage of your VINs</li>
+                <li><strong>Tools</strong> to <a href="/">generate</a>, <a href="/vin-decoder/">decode</a>, <a href="/vin-validator/">validate</a>, <a href="/bulk-vin-generator/">bulk-generate</a>, <a href="/vin-qr-code-generator/">make QR codes from</a>, and <a href="/vin-breakdown-visualizer/">visualize</a> VINs.</li>
+                <li><strong>Guides</strong> on our <a href="/blog/">blog</a> that explain how to read a VIN, how to spot a fake or cloned one, where to find your VIN, and what the number can and cannot tell you.</li>
+            </ul>
+            <p>Everything is free, with no signup, and we do not store the VINs you enter.</p>
+
+            <h3>How We Keep It Accurate</h3>
+            <p>Accuracy is the whole point of a tool like this, so we hold the content to a clear standard:</p>
+            <ul>
+                <li>Every tool implements the check-digit algorithm published by the U.S. Department of Transportation, following the ISO 3779 standard used worldwide since 1981.</li>
+                <li>Our guides are written by people who work with this data, and fact-checked against the standard and official manufacturer-code references before they go live.</li>
+                <li>When a standard changes or a reader flags an error, we fix the page. If we are not certain about something, we say so rather than guess.</li>
             </ul>
 
-            <h3>Who Uses Our Tools?</h3>
-            <p>FreeVinGenerator.com serves a diverse community:</p>
-            <ul>
-                <li><strong>Software Developers:</strong> Testing vehicle management systems and automotive applications</li>
-                <li><strong>QA Engineers:</strong> Creating test data for validation and system testing</li>
-                <li><strong>Students & Educators:</strong> Learning about VIN structure and automotive systems</li>
-                <li><strong>Web Designers:</strong> Populating demo sites with realistic sample data</li>
-                <li><strong>Database Administrators:</strong> Generating test records for development environments</li>
-                <li><strong>API Developers:</strong> Testing vehicle lookup and processing endpoints</li>
-            </ul>
-
-            <h3>Why Choose Us?</h3>
-            <ul>
-                <li><strong>ISO 3779 Compliant:</strong> All VINs follow international standards</li>
-                <li><strong>Accurate Check Digits:</strong> Official DOT algorithm implementation</li>
-                <li><strong>Fast & Reliable:</strong> Generate thousands of VINs in seconds</li>
-                <li><strong>Mobile Friendly:</strong> Works perfectly on all devices</li>
-                <li><strong>No Ads Interruption:</strong> Clean, focused interface</li>
-                <li><strong>Always Available:</strong> 24/7 access with no downtime</li>
-            </ul>
+            <h3>Who Uses It</h3>
+            <p>The tools serve developers and QA engineers who need test data, and the guides help used-car buyers, students, and anyone trying to make sense of the 17 characters stamped on their dashboard.</p>
 
             <h3>Important Disclaimer</h3>
             <div class="highlight-box">
-                <strong>For Testing Purposes Only:</strong> The VINs generated by our tools are mathematically valid but randomly created and do not correspond to real vehicles. They should only be used for testing, development, educational purposes, and demonstrations. Never use generated VINs for fraudulent activities, legal documents, or to misrepresent vehicle information.
+                <strong>For testing and education only:</strong> The VINs our generator creates are mathematically valid but randomly built, and they do not belong to real vehicles. Use them for software testing, development, demos, and learning. Never use a generated VIN for vehicle registration, insurance, legal documents, or to misrepresent a vehicle. Doing so is illegal.
             </div>
 
-            <h3>Technical Accuracy</h3>
-            <p>Our VIN tools use the official check digit calculation algorithm established by the U.S. Department of Transportation. Each VIN:</p>
-            <ul>
-                <li>Contains exactly 17 characters</li>
-                <li>Excludes letters I, O, and Q (to avoid confusion with 1 and 0)</li>
-                <li>Includes a mathematically correct check digit at position 9</li>
-                <li>Follows the standardized format used worldwide since 1981</li>
-            </ul>
-
-            <h3>Commitment to Quality</h3>
-            <p>We are committed to maintaining high-quality, reliable tools that serve our users' needs. Our platform is regularly updated to ensure accuracy and compliance with current VIN standards. We continuously improve based on user feedback and industry best practices.</p>
-
-            <h3>Contact Us</h3>
-            <p>Have questions, suggestions, or feedback? We'd love to hear from you! Visit our <a href="/contact/" style="color: #667eea; text-decoration: underline;">Contact page</a> to get in touch.</p>
+            <h3>Get in Touch</h3>
+            <p>Questions, corrections, or an idea for a guide we should write? We read everything. Reach us through the <a href="/contact/">contact page</a>.</p>
         </article>
     </div>
 
