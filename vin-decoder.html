@@ -104,6 +104,8 @@ notification: "Action completed! ✓"
                     </button>
                 </div>
 
+                <div id="decodeMessage" class="decode-message" role="status" aria-live="polite"></div>
+
                 <div id="decodeResult" class="decode-result" style="display: none;">
                     <h3>Decoded Information</h3>
                     <div class="decode-item">
@@ -113,6 +115,10 @@ notification: "Action completed! ✓"
                     <div class="decode-item">
                         <span class="decode-label">Check Digit Valid:</span>
                         <span class="decode-value" id="checkDigitStatus">-</span>
+                    </div>
+                    <div class="decode-item">
+                        <span class="decode-label">WMI (World Manufacturer ID):</span>
+                        <span class="decode-value" id="wmi">-</span>
                     </div>
                     <div class="decode-item">
                         <span class="decode-label">Country:</span>

@@ -22,6 +22,13 @@ function calculateExpectedCheckDigit(vin) {
     return remainder === 10 ? 'X' : remainder.toString();
 }
 
+function showValidateMessage(text, type) {
+    const msg = document.getElementById('validateMessage');
+    if (!msg) return;
+    msg.textContent = text || '';
+    msg.className = 'decode-message' + (text ? ' show ' + (type || 'hint') : '');
+}
+
 function validateVIN() {
     const vinInput = document.getElementById('vinValidateInput');
     const vin = vinInput.value.toUpperCase().trim();
@@ -31,10 +38,18 @@ function validateVIN() {
     // Clear previous results
     resultDiv.innerHTML = '';
 
+    // Gentle progress feedback while the VIN is still being typed
     if (vin.length === 0) {
         detailsDiv.style.display = 'none';
+        showValidateMessage('', 'hint');
         return;
     }
+    if (vin.length < 17) {
+        detailsDiv.style.display = 'none';
+        showValidateMessage('Keep typing - a VIN is 17 characters (' + vin.length + '/17).', 'hint');
+        return;
+    }
+    showValidateMessage('', 'hint');
 
     let isValid = true;
     let errors = [];
@@ -105,4 +120,5 @@ function clearValidator() {
     document.getElementById('vinValidateInput').value = '';
     document.getElementById('validationResult').innerHTML = '';
     document.getElementById('validationDetails').style.display = 'none';
+    showValidateMessage('', 'hint');
 }

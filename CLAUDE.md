@@ -215,11 +215,10 @@ It auto-publishes at `/blog/slug/` via `post.html` (renders Article + Breadcrumb
 ## 12. Current status (as of 2026-08-15)
 
 - ✅ Jekyll migration, Tools hub, Blog, mega menu, flat pages, auto-sitemap/feed — done and deployed.
-- ✅ **8 blog articles** written (human voice, no em-dashes, internal-linked), all SEO-clean. First 5 published + indexed; 3 newer (cloning scams, stolen-by-VIN, VIN vs plate) pending push.
+- ✅ **8 blog articles LIVE** (human voice, no em-dashes, internal-linked), all SEO-clean, all with featured images. Indexing requested.
 - ✅ Contrast (WCAG) fixes, editorial cards, white blog theme.
-- ✅ **About page** rewritten for E-E-A-T (origin story, editorial standards, honest trust signals) — owner can add a real name/bio to strengthen further.
-- ⚠️ **TODO — owner:** add 3 featured images at `assets/blog/{how-vin-cloning-scams-work, how-to-check-if-a-car-is-stolen-by-vin, vin-vs-license-plate-vs-registration}.jpg` (1200×630). First 5 post images already added.
-- ⚠️ **Uncommitted** at session end: 3 new articles, rewritten About, CSS/contrast, SEO tweaks, CLAUDE.md, README. Commit + push when ready.
-- **AdSense plan:** see `docs/adsense-review-plan.md`. Build to 10-15 indexed pages, strengthen About, wait for re-crawl/indexing, THEN request review. Do not request early.
+- ✅ **About page** rewritten for E-E-A-T with named owner **Waqas Ahmad** (web dev, 5+ yrs) + founder Person schema.
+- **Publishing cadence:** ~1 batch/week (Thu/Fri). Next batch ~Aug 20/21: motorcycle-VIN, salvage-title-VIN, recall-by-VIN articles + a WMI/manufacturer-code reference page (8 → ~11-12 pages).
+- **AdSense plan:** see `docs/adsense-review-plan.md`. Build to 10-15 indexed pages, wait for re-crawl/indexing, THEN request review. Do NOT request early.
 
 Session memory (machine-specific setup, cross-session): `~/.claude/projects/D--Code-FreeVinGenerator/memory/`.

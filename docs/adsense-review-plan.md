@@ -5,19 +5,36 @@ Do NOT click **"Request review"** until every item in Phase 4's green-light list
 
 ---
 
-## Where the site stands today (2026-08-15)
+## What is LIVE now (updated 2026-08-15, Sat)
 
-Already done ✅
-- 5 original blog articles published (human voice, no AI tells, internally linked)
-- 5 featured images in `assets/blog/`
-- Tools hub, blog archive, streamlined nav, dense internal linking
-- Clean SEO on every page (title, meta, canonical, OG/Twitter, JSON-LD, single H1, alt text)
-- Auto sitemap + RSS feed; sitemap submitted; indexing requested
-- Privacy Policy discloses AdSense, cookies, and third-party advertising (required)
-- ads.txt present and Authorized; HTTPS; mobile-responsive; WCAG contrast fixed
-- Clear "testing / educational only" disclaimers on generated VINs
+Published & deployed ✅
+- **8 original blog articles**, all with featured images, human voice, no AI tells, densely internally linked:
+  1. How to Read a VIN: What All 17 Characters Mean
+  2. What a VIN Tells You: Decoding Make, Model, and Year
+  3. Where to Find Your VIN: Every Location on Your Vehicle
+  4. VIN Model Year Codes: The Full Chart (1980-2031)
+  5. How to Check If a VIN Is Valid (and Spot a Cloned One)
+  6. How VIN Cloning Scams Work (and How to Protect Yourself)
+  7. How to Check If a Car Is Stolen Using the VIN
+  8. VIN vs. License Plate vs. Registration: The Difference
+- **6 tools** + Tools hub + "What is a VIN?" reference guide
+- **About page** rewritten for E-E-A-T: origin story, editorial standards, named owner **Waqas Ahmad** (web developer, 5+ yrs) + founder Person schema
+- Clean SEO on all 21 pages (title, meta 110-160, canonical, OG/Twitter, JSON-LD, single H1, alt text)
+- Auto sitemap + RSS feed; sitemap submitted; all URLs requested for indexing
+- Privacy Policy discloses AdSense/cookies/third-party ads; ads.txt Authorized; HTTPS; mobile; WCAG contrast fixed
+- Clear "testing / educational only" disclaimers
 
-Still to do ⚠️ (the rest of this plan)
+## What is PLANNED next
+
+Publishing cadence: **~1 batch per week (Thursday/Friday)**. Next batch targeted **Thu Aug 20 / Fri Aug 21**.
+
+Next batch (takes the site from 8 -> ~11-12 pages):
+- Article: How to Decode a Motorcycle VIN
+- Article: What a Salvage or Rebuilt Title VIN Tells You
+- Article: How to Check Open Recalls by VIN
+- **WMI / manufacturer-code reference page** (searchable country + manufacturer prefix tables) — high-value unique data
+
+Then keep going weekly until **10-15 indexed pages**, then request the AdSense review (see green-light gate below).
 
 ---
 
@@ -40,7 +57,7 @@ Google rejected the site as a thin cluster of tools. Five articles is the floor,
 
 Google weighs "who runs this and why trust them."
 
-- [ ] Rewrite the **About page**: who runs the site, real background/expertise with VINs and testing data, why it exists, and the honest educational/testing mission. Name a person or a consistent team identity.
+- [x] Rewrite the **About page** with origin story, editorial standards, and named owner Waqas Ahmad + founder schema. (DONE 2026-08-15. Can strengthen further with a photo + LinkedIn/GitHub `sameAs`.)
 - [ ] Confirm the **Contact page** has a working method (email or form that actually reaches you).
 - [ ] Make sure Privacy Policy + Terms are linked in the footer on every page (they are).
 
