@@ -218,6 +218,8 @@ It auto-publishes at `/blog/slug/` via `post.html` (renders Article + Breadcrumb
 - ✅ **8 blog articles LIVE** (human voice, no em-dashes, internal-linked), all SEO-clean, all with featured images. Indexing requested.
 - ✅ Contrast (WCAG) fixes, editorial cards, white blog theme.
 - ✅ **About page** rewritten for E-E-A-T with named owner **Waqas Ahmad** (web dev, 5+ yrs) + founder Person schema.
+- ✅ **Decoder rebuilt** for accuracy (fixed year bug + era logic, ISO 3780 country, ~120 WMIs); input-feedback UI on decoder + validator; tools hub de-thinned; minimal theme toggle (moon/sun); copyright year auto-stamped (`{{ 'now' | date }}`).
+- ✅ **Client-side search** (Ctrl+K, Algolia-style modal): `search.json` (Jekyll-generated index of posts + tools + pages) → `assets/search.js` (lazy-loads Fuse.js from jsDelivr) → modal in `_layouts/default.html`, trigger in `_includes/header.html`, CSS at end of `app.css`. Empty state recommends the 6 tools. Fuse threshold 0.3. `search.js` is in the gulp JS concat.
 - **Publishing cadence:** ~1 batch/week (Thu/Fri). Next batch ~Aug 20/21: motorcycle-VIN, salvage-title-VIN, recall-by-VIN articles + a WMI/manufacturer-code reference page (8 → ~11-12 pages).
 - **AdSense plan:** see `docs/adsense-review-plan.md`. Build to 10-15 indexed pages, wait for re-crawl/indexing, THEN request review. Do NOT request early.
 

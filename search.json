@@ -1,0 +1,24 @@
+---
+permalink: /search.json
+---
+[
+{%- for post in site.posts %}
+  {
+    "type": "Article",
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | jsonify }},
+    "category": {{ post.category | default: "Blog" | jsonify }},
+    "desc": {{ post.description | jsonify }},
+    "body": {{ post.content | strip_html | truncatewords: 80 | jsonify }}
+  },
+{%- endfor %}
+  { "type": "Tool", "title": "VIN Generator", "url": "/", "category": "Tool", "desc": "Generate random, structurally valid VINs with correct check digits for testing.", "body": "" },
+  { "type": "Tool", "title": "VIN Decoder", "url": "/vin-decoder/", "category": "Tool", "desc": "Decode a VIN's country, manufacturer, model year, plant, and check digit.", "body": "" },
+  { "type": "Tool", "title": "VIN Validator", "url": "/vin-validator/", "category": "Tool", "desc": "Check if a VIN is valid: length, characters, and check-digit math.", "body": "" },
+  { "type": "Tool", "title": "Bulk VIN Generator", "url": "/bulk-vin-generator/", "category": "Tool", "desc": "Generate hundreds of valid VINs at once and export as CSV or TXT.", "body": "" },
+  { "type": "Tool", "title": "VIN QR Code Generator", "url": "/vin-qr-code-generator/", "category": "Tool", "desc": "Turn a VIN into a scannable, downloadable QR code.", "body": "" },
+  { "type": "Tool", "title": "VIN Breakdown Visualizer", "url": "/vin-breakdown-visualizer/", "category": "Tool", "desc": "See every VIN position mapped to its meaning in an interactive diagram.", "body": "" },
+  { "type": "Page", "title": "What is a VIN?", "url": "/what-is-a-vin/", "category": "Guide", "desc": "A complete guide to how Vehicle Identification Numbers are structured.", "body": "" },
+  { "type": "Page", "title": "All VIN Tools", "url": "/tools/", "category": "Page", "desc": "Every free VIN tool in one place.", "body": "" },
+  { "type": "Page", "title": "VIN Blog", "url": "/blog/", "category": "Page", "desc": "Guides and articles about reading, decoding, and checking VINs.", "body": "" }
+]

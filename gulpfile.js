@@ -20,7 +20,8 @@ gulp.task('js', function () {
         'assets/vin-decoder.js',
         'assets/vin-validator.js',
         'assets/vin-qr-generator.js',
-        'assets/vin-visualizer.js'
+        'assets/vin-visualizer.js',
+        'assets/search.js'
     ])
         .pipe(concat('app.js'))
         .pipe(uglify())
