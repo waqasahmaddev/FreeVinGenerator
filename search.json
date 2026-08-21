@@ -19,6 +19,7 @@ permalink: /search.json
   { "type": "Tool", "title": "VIN QR Code Generator", "url": "/vin-qr-code-generator/", "category": "Tool", "desc": "Turn a VIN into a scannable, downloadable QR code.", "body": "" },
   { "type": "Tool", "title": "VIN Breakdown Visualizer", "url": "/vin-breakdown-visualizer/", "category": "Tool", "desc": "See every VIN position mapped to its meaning in an interactive diagram.", "body": "" },
   { "type": "Page", "title": "What is a VIN?", "url": "/what-is-a-vin/", "category": "Guide", "desc": "A complete guide to how Vehicle Identification Numbers are structured.", "body": "" },
+  { "type": "Page", "title": "VIN Country & Manufacturer (WMI) Codes", "url": "/wmi-codes/", "category": "Reference", "desc": "Look up VIN country codes and manufacturer WMI codes, from Ford to Ferrari.", "body": "world manufacturer identifier country codes prefix Ford Honda Toyota BMW" },
   { "type": "Page", "title": "All VIN Tools", "url": "/tools/", "category": "Page", "desc": "Every free VIN tool in one place.", "body": "" },
   { "type": "Page", "title": "VIN Blog", "url": "/blog/", "category": "Page", "desc": "Guides and articles about reading, decoding, and checking VINs.", "body": "" }
 ]

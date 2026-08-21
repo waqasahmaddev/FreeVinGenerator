@@ -1831,22 +1831,46 @@ html.dark-mode #vinVisualization {
     margin-bottom: 26px;
     display: block;
 }
-.post-article table {
+.content-section table {
     width: 100%;
     border-collapse: collapse;
     margin: 22px 0;
     font-size: 15px;
-}
-.post-article th,
-.post-article td {
     border: 1px solid var(--shadow-color);
-    padding: 10px 14px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.content-section th,
+.content-section td {
+    border: 1px solid var(--shadow-color);
+    padding: 11px 14px;
     text-align: left;
     color: var(--text-secondary);
+    vertical-align: top;
 }
-.post-article th {
+.content-section th {
     color: var(--text-primary);
     font-weight: 700;
+    background: var(--input-bg);
+}
+.content-section tbody tr:nth-child(even) td {
+    background: rgba(0, 0, 0, 0.025);
+}
+.dark-mode .content-section tbody tr:nth-child(even) td,
+html.dark-mode .content-section tbody tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.03);
+}
+@media (max-width: 600px) {
+    .content-section table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .content-section th,
+    .content-section td {
+        padding: 9px 11px;
+        font-size: 14px;
+    }
 }
 .post-article .post-back {
     margin-top: 34px;
@@ -1997,7 +2021,9 @@ html.dark-mode #vinVisualization {
     .mega-trigger {
         padding: 18px 30px !important;
     }
-    .mega-menu {
+    .mega-menu,
+    .has-mega:hover .mega-menu,
+    .has-mega:focus-within .mega-menu {
         position: static;
         transform: none;
         opacity: 1;
