@@ -62,14 +62,16 @@ bulk-vin-generator.html  # -> /bulk-vin-generator/
 vin-qr-code-generator.html    # -> /vin-qr-code-generator/
 vin-breakdown-visualizer.html # -> /vin-breakdown-visualizer/
 what-is-a-vin.html       # -> /what-is-a-vin/
+wmi-codes.html           # -> /wmi-codes/  (country + manufacturer WMI reference)
 about.html contact.html privacy-policy.html terms-of-service.html
+search.json              # Jekyll-generated search index -> /search.json
 
-_posts/
-  2026-08-14-how-to-read-a-vin.md            # -> /blog/how-to-read-a-vin/
-  2026-08-15-how-to-check-if-a-vin-is-valid.md
-  2026-08-13-where-to-find-your-vin.md
-  2026-08-12-what-a-vin-tells-you.md
-  2026-08-11-vin-model-year-codes-chart.md
+_posts/                  # 11 articles, permalink /blog/:title/ (URL = slug, not date)
+  # 8 live (Aug 08-15): how-to-read-a-vin, what-a-vin-tells-you, where-to-find-your-vin,
+  #   vin-model-year-codes-chart, how-to-check-if-a-vin-is-valid, how-vin-cloning-scams-work,
+  #   how-to-check-if-a-car-is-stolen-by-vin, vin-vs-license-plate-vs-registration
+  # 3 dated 2026-08-20 (publish Thu): how-to-decode-a-motorcycle-vin,
+  #   what-a-salvage-title-vin-tells-you, how-to-check-recalls-by-vin
 
 assets/
   app.css / app.min.css  # source + minified (gulp)
@@ -215,12 +217,20 @@ It auto-publishes at `/blog/slug/` via `post.html` (renders Article + Breadcrumb
 ## 12. Current status (as of 2026-08-15)
 
 - ✅ Jekyll migration, Tools hub, Blog, mega menu, flat pages, auto-sitemap/feed — done and deployed.
-- ✅ **8 blog articles LIVE** (human voice, no em-dashes, internal-linked), all SEO-clean, all with featured images. Indexing requested.
-- ✅ Contrast (WCAG) fixes, editorial cards, white blog theme.
-- ✅ **About page** rewritten for E-E-A-T with named owner **Waqas Ahmad** (web dev, 5+ yrs) + founder Person schema.
-- ✅ **Decoder rebuilt** for accuracy (fixed year bug + era logic, ISO 3780 country, ~120 WMIs); input-feedback UI on decoder + validator; tools hub de-thinned; minimal theme toggle (moon/sun); copyright year auto-stamped (`{{ 'now' | date }}`).
-- ✅ **Client-side search** (Ctrl+K, Algolia-style modal): `search.json` (Jekyll-generated index of posts + tools + pages) → `assets/search.js` (lazy-loads Fuse.js from jsDelivr) → modal in `_layouts/default.html`, trigger in `_includes/header.html`, CSS at end of `app.css`. Empty state recommends the 6 tools. Fuse threshold 0.3. `search.js` is in the gulp JS concat.
-- **Publishing cadence:** ~1 batch/week (Thu/Fri). Next batch ~Aug 20/21: motorcycle-VIN, salvage-title-VIN, recall-by-VIN articles + a WMI/manufacturer-code reference page (8 → ~11-12 pages).
-- **AdSense plan:** see `docs/adsense-review-plan.md`. Build to 10-15 indexed pages, wait for re-crawl/indexing, THEN request review. Do NOT request early.
+- ✅ **11 blog articles** (human voice, no em-dashes, internal-linked), all SEO-clean, all with featured images. 8 live; **3 dated Aug 20 to publish Thursday** (motorcycle-VIN, salvage-title-VIN, recall-by-VIN).
+- ✅ **`/wmi-codes/` reference page** (VIN country + ~50 manufacturer WMI tables) — linked in the Tools mega menu, tools hub, search, and articles. A "linkable asset" for SEO.
+- ✅ Contrast (WCAG) fixes, editorial cards, white blog theme; **`.content-section` tables** styled (borders, header shading, zebra, mobile scroll).
+- ✅ **About page** E-E-A-T with named owner **Waqas Ahmad** (web dev, 5+ yrs) + founder Person schema.
+- ✅ **Decoder rebuilt** for accuracy (fixed year bug + position-7 era logic, ISO 3780 country, ~120 WMIs); input-feedback UI on decoder + validator; tools hub de-thinned; minimal theme toggle (moon/sun); copyright year auto-stamped.
+- ✅ **Client-side search** (Ctrl+K, Algolia-style modal): `search.json` (Jekyll-generated index of posts + tools + pages) → `assets/search.js` (lazy-loads Fuse.js from jsDelivr, so zero page-load cost) → modal in `_layouts/default.html`, trigger in `_includes/header.html`, CSS at end of `app.css`. Empty state recommends the 6 tools. Fuse threshold 0.3. `search.js` is in the gulp JS concat.
+- ✅ **Mobile mega-menu fix:** desktop `:focus-within` (specificity 0,3,0) was overriding the mobile `.mega-menu` (0,1,0) on tap and shoving it left; mobile block now also targets `:hover`/`:focus-within` to force `transform:none`.
+
+## 13. What's next — goals & plan
+
+Two goals, same lever (quality content + traffic):
+1. **AdSense approval** — see `docs/adsense-review-plan.md`. Content target is met (~20 pages). Next: get pages **Indexed** in Search Console (not just crawled), wait 1-2 weeks, THEN request review (~early Sept). Do NOT request before pages show Indexed.
+2. **Grow the site long-term** — see `docs/content-calendar.md` (12-week backlog + growth strategy). Publish ~2 keyword-targeted articles/week, build linkable reference pages, earn backlinks (Reddit/Quora/dev communities), use Search Console data to double down on winners, and consider the vPIC real-decode feature ("Lever B") to make the decoder a destination.
+
+**Publishing cadence:** ~2 articles/week, batch published Thu/Fri (owner in Pakistan, so mind the UTC future-post gotcha in section 11).
 
 Session memory (machine-specific setup, cross-session): `~/.claude/projects/D--Code-FreeVinGenerator/memory/`.
