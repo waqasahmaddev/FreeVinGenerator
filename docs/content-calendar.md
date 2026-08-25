@@ -2,7 +2,7 @@
 
 Purpose: a ready backlog of article topics so there is always something to publish. Cadence: ~2 articles per week (one batch, published Thursday/Friday). Every article follows the writing rules in `CLAUDE.md` section 8 (human voice, no em dashes, no AI filler, ~800-1000 words, real tables/examples, 2-4 internal links + a "Keep Reading" section, featured image at `assets/blog/<slug>.jpg` 1200x630).
 
-## Already published (11 articles + reference)
+## Already published (13 articles + reference)
 
 1. How to Read a VIN: What All 17 Characters Mean
 2. What a VIN Tells You: Decoding Make, Model, and Year
@@ -15,7 +15,11 @@ Purpose: a ready backlog of article topics so there is always something to publi
 9. How to Decode a Motorcycle VIN
 10. What a Salvage or Rebuilt Title VIN Tells You
 11. How to Check Open Recalls by VIN
+12. How to Create a VIN QR Code (Free, No Signup) — *tool-cluster page (Aug 21)*
+13. How to Generate a Random VIN Number (for Testing) — *tool-cluster page (Aug 22)*
 - Reference page: `/wmi-codes/` (VIN country + manufacturer codes)
+
+**Note on #12-13 (tool clusters):** these two support the QR + Generator tools directly (funnel readers to the tools and give the tools indexable supporting content). They were NOT from the 12-week backlog below - they were added to build topic clusters around the tools. **Open follow-up:** the tool pages do NOT yet link back to these articles. Add reverse "related reading" links from `/` and `/vin-qr-code-generator/` (and other tools) to complete the clusters - this is the top priority before the next content batch.
 
 ## The 12-week backlog (2 per week)
 
@@ -25,9 +29,9 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - How to Run a Free VIN Check (Without Paying) - links: Decoder, Validator, history-report articles
 - Why Won't My VIN Decode? Common Reasons and Fixes - links: Decoder, Validator, how-to-read-a-vin
 
-**Week 2**
-- How to Decode a Ford VIN - links: Decoder, /wmi-codes/, how-to-read-a-vin
-- How to Decode a Toyota VIN - links: Decoder, /wmi-codes/
+**Week 2** ✅ written 2026-08-25 (images pending - see note)
+- ✅ How to Decode a Ford VIN - links: Decoder, /wmi-codes/, how-to-read-a-vin
+- ✅ How to Decode a Toyota VIN - links: Decoder, /wmi-codes/
 
 **Week 3**
 - How to Tell What Engine a Car Has From the VIN - links: Decoder, what-a-vin-tells-you
@@ -68,6 +72,14 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 **Week 12**
 - The History of the VIN: Why 17 Characters? - links: how-to-read-a-vin, what-is-a-vin
 - How to Decode a Classic (Pre-1981) Car VIN - links: how-to-read-a-vin, model-year-chart
+
+## Tool-cluster track (support each tool with 1-2 articles, then link both ways)
+The QR + Generator clusters are started (#12-13). Finish the pattern for the other tools:
+- Validator: "How to Validate a VIN (Check the Check Digit)" - links: Validator, check-digit article
+- Decoder: covered heavily by the decode series below (Ford/Toyota/etc.)
+- Bulk Generator: "How to Create Bulk Test VINs for a Database or Test Suite" - links: Bulk, Generator
+- Visualizer: "The 3 Parts of a VIN: WMI, VDS, VIS Explained" - links: Visualizer, /wmi-codes/, how-to-read-a-vin
+Rule: every tool page links to its cluster article(s), and every cluster article links to its tool.
 
 ## Beyond week 12 (more ideas, not yet slotted)
 - Decode series continues: Jeep, Dodge/Ram, Hyundai, Kia, Subaru, Mazda, Tesla, Audi, Mercedes, VW, Harley, Yamaha
