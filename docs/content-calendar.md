@@ -29,13 +29,13 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - How to Run a Free VIN Check (Without Paying) - links: Decoder, Validator, history-report articles
 - Why Won't My VIN Decode? Common Reasons and Fixes - links: Decoder, Validator, how-to-read-a-vin
 
-**Week 2** ✅ written 2026-08-25 (images pending - see note)
+**Week 2** ✅ LIVE (published week of Aug 24)
 - ✅ How to Decode a Ford VIN - links: Decoder, /wmi-codes/, how-to-read-a-vin
 - ✅ How to Decode a Toyota VIN - links: Decoder, /wmi-codes/
 
-**Week 3**
-- How to Tell What Engine a Car Has From the VIN - links: Decoder, what-a-vin-tells-you
-- How to Find a Car's Manufacture Date From the VIN - links: model-year-chart, Decoder
+**Week 3** ✅ written 2026-08-28 (images pending - see note)
+- ✅ How to Tell What Engine a Car Has From the VIN - links: Decoder, what-a-vin-tells-you
+- ✅ How to Find a Car's Manufacture Date From the VIN - links: model-year-chart, Decoder
 
 **Week 4**
 - How to Decode a Honda VIN - links: Decoder, /wmi-codes/
