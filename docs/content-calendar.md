@@ -37,9 +37,9 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - ✅ How to Tell What Engine a Car Has From the VIN - links: Decoder, what-a-vin-tells-you
 - ✅ How to Find a Car's Manufacture Date From the VIN - links: model-year-chart, Decoder
 
-**Week 4**
-- How to Decode a Honda VIN - links: Decoder, /wmi-codes/
-- How to Decode a Chevrolet VIN - links: Decoder, /wmi-codes/
+**Week 4** ✅ written 2026-09-01 (images pending - see note)
+- ✅ How to Decode a Honda VIN - links: Decoder, /wmi-codes/
+- ✅ How to Decode a Chevrolet VIN - links: Decoder, /wmi-codes/
 
 **Week 5**
 - What Is a VIN Check Digit and How Is It Calculated? - links: Validator, how-to-read-a-vin
