@@ -871,6 +871,26 @@ h1 {
     font-weight: 700;
 }
 
+/* ---- Real vehicle details (NHTSA vPIC) ---- */
+.vpic-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid var(--text-light);
+}
+
+.vpic-section h3 {
+    font-size: 20px;
+    color: var(--text-primary);
+    margin: 0 0 6px;
+}
+
+.vpic-note {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
 /* ============================================
    VALIDATION RESULT
    ============================================ */
@@ -1831,14 +1851,25 @@ html.dark-mode #vinVisualization {
     margin-bottom: 26px;
     display: block;
 }
-.content-section table {
-    width: 100%;
-    border-collapse: collapse;
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin: 22px 0;
+    border-radius: 8px;
+}
+.content-section table {
+    width: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 0;
     font-size: 15px;
     border: 1px solid var(--shadow-color);
     border-radius: 8px;
     overflow: hidden;
+}
+/* tables not yet wrapped by JS still fill width */
+.content-section > table {
+    width: 100%;
 }
 .content-section th,
 .content-section td {
@@ -1861,11 +1892,6 @@ html.dark-mode .content-section tbody tr:nth-child(even) td {
     background: rgba(255, 255, 255, 0.03);
 }
 @media (max-width: 600px) {
-    .content-section table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
     .content-section th,
     .content-section td {
         padding: 9px 11px;

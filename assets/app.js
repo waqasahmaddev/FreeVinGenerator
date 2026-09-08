@@ -378,6 +378,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.addEventListener('scroll', handleScroll);
+
+    // Make article/content tables horizontally scrollable on small screens
+    // by wrapping each in a scroll container (kramdown emits bare <table>).
+    var tables = document.querySelectorAll('.content-section table');
+    for (var i = 0; i < tables.length; i++) {
+        var t = tables[i];
+        if (t.parentNode && t.parentNode.classList.contains('table-scroll')) continue;
+        var wrap = document.createElement('div');
+        wrap.className = 'table-scroll';
+        t.parentNode.insertBefore(wrap, t);
+        wrap.appendChild(t);
+    }
 });
 
 // Theme Toggle

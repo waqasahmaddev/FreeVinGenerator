@@ -2,7 +2,7 @@
 permalink: /vin-decoder/
 layout: "default"
 title: "Free VIN Decoder - Decode Vehicle Identification Numbers (2026)"
-description: "Free VIN decoder to instantly decode any 17-character Vehicle Identification Number. Reveals manufacturer, country, year, and check-digit validation."
+description: "Free VIN decoder. Instantly decode any 17-character VIN for the real make, model, year, engine, and plant, plus country and check-digit validation."
 keywords: "VIN decoder, decode VIN, VIN lookup, vehicle identification number decoder, free VIN decoder, VIN check, VIN number lookup"
 active: "tools"
 og_title: "Free VIN Decoder - Decode Vehicle Identification Numbers"
@@ -84,7 +84,7 @@ notification: "Action completed! ✓"
             <div class="card" role="region" aria-label="VIN Decoder Tool">
                 <div class="input-group">
                     <label for="vinInput">Enter VIN (17 characters)</label>
-                    <input type="text" id="vinInput" placeholder="e.g., 1HGBH41JXMN109186" maxlength="17" oninput="decodeVIN()" aria-label="Enter 17-character VIN to decode">
+                    <input type="text" id="vinInput" placeholder="e.g., 1HGCM82633A004352" maxlength="17" oninput="decodeVIN()" aria-label="Enter 17-character VIN to decode">
                 </div>
 
                 <div class="buttons">
@@ -107,7 +107,8 @@ notification: "Action completed! ✓"
                 <div id="decodeMessage" class="decode-message" role="status" aria-live="polite"></div>
 
                 <div id="decodeResult" class="decode-result" style="display: none;">
-                    <h3>Decoded Information</h3>
+                    <h3>VIN Structure</h3>
+                    <p class="vpic-note">What the 17 characters encode (ISO 3779). Works for any VIN, including randomly generated test VINs. This reads the code's format, not a lookup of a real car.</p>
                     <div class="decode-item">
                         <span class="decode-label">VIN:</span>
                         <span class="decode-value" id="decodedVin">-</span>
@@ -125,7 +126,7 @@ notification: "Action completed! ✓"
                         <span class="decode-value" id="country">-</span>
                     </div>
                     <div class="decode-item">
-                        <span class="decode-label">Manufacturer:</span>
+                        <span class="decode-label">Manufacturer: </span>
                         <span class="decode-value" id="manufacturer">-</span>
                     </div>
                     <div class="decode-item">
@@ -140,10 +141,17 @@ notification: "Action completed! ✓"
                         <span class="decode-label">Serial Number:</span>
                         <span class="decode-value" id="serialNumber">-</span>
                     </div>
+
+                    <div id="vpicSection" class="vpic-section" style="display: none;">
+                        <h3>Real Vehicle Details</h3>
+                        <p class="vpic-note">Live lookup from the free NHTSA vPIC database. Works for US-market vehicles; randomly generated or non-US VINs may have no factory record.</p>
+                        <div id="vpicStatus" class="decode-message" role="status" aria-live="polite"></div>
+                        <div id="vpicFields"></div>
+                    </div>
                 </div>
 
                 <div class="disclaimer">
-                    <strong>Note:</strong> This is a basic decoder showing general VIN information. For complete vehicle history, specifications, and detailed information, please use official services.
+                    <strong>Note:</strong> Real vehicle details come live from the free NHTSA vPIC database and cover US-market vehicles. For full vehicle history (accidents, title, owners), use a dedicated history report.
                 </div>
             </div>
         </div>

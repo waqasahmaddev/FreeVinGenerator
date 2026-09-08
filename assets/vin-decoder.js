@@ -246,6 +246,13 @@ function decodeVIN() {
 
     document.getElementById('decodeResult').style.display = 'block';
 
+    // Real vehicle details from NHTSA vPIC (debounced, only for valid check-digit VINs)
+    if (isValid) {
+        scheduleVpicLookup(vin);
+    } else {
+        showVpicSection(false);
+    }
+
     if (typeof gtag !== 'undefined') {
         gtag('event', 'vin_decoded', {
             'event_category': 'Tool Usage',
@@ -255,8 +262,122 @@ function decodeVIN() {
     }
 }
 
+// ---- Real vehicle details via NHTSA vPIC API (free, no key, client-side) ----
+var vpicTimer = null;
+var lastVpicVin = '';
+
+function showVpicSection(show) {
+    var section = document.getElementById('vpicSection');
+    if (section) section.style.display = show ? 'block' : 'none';
+}
+
+function setVpicStatus(text, type) {
+    var el = document.getElementById('vpicStatus');
+    if (!el) return;
+    el.textContent = text || '';
+    el.className = 'decode-message' + (text ? ' show ' + (type || 'hint') : '');
+}
+
+function scheduleVpicLookup(vin) {
+    if (vin === lastVpicVin) return; // already showing this VIN's result
+    if (vpicTimer) clearTimeout(vpicTimer);
+    vpicTimer = setTimeout(function () { lookupRealVehicle(vin); }, 500);
+}
+
+function lookupRealVehicle(vin) {
+    lastVpicVin = vin;
+    var fields = document.getElementById('vpicFields');
+    if (fields) fields.innerHTML = '';
+    showVpicSection(true);
+    setVpicStatus('Looking up real vehicle details...', 'hint');
+
+    var url = 'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/' +
+              encodeURIComponent(vin) + '?format=json';
+
+    var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timeout = setTimeout(function () { if (controller) controller.abort(); }, 8000);
+
+    fetch(url, controller ? { signal: controller.signal } : undefined)
+        .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
+        .then(function (data) {
+            clearTimeout(timeout);
+            if (vin !== lastVpicVin) return; // a newer lookup superseded this one
+            var res = data && data.Results && data.Results[0];
+            renderVpicResult(res);
+        })
+        .catch(function () {
+            clearTimeout(timeout);
+            if (vin !== lastVpicVin) return;
+            setVpicStatus('Could not reach the NHTSA database right now. The structural decode above is still accurate.', 'error');
+        });
+}
+
+function renderVpicResult(res) {
+    var fields = document.getElementById('vpicFields');
+    if (!fields) return;
+
+    if (!res || !res.Make || !res.Model) {
+        setVpicStatus('No factory record found. This is normal for randomly generated VINs and many non-US-market vehicles.', 'hint');
+        return;
+    }
+
+    // Build a combined engine string from the parts that exist
+    var engineParts = [];
+    if (res.DisplacementL) engineParts.push(parseFloat(res.DisplacementL).toFixed(1) + 'L');
+    if (res.EngineCylinders) engineParts.push(res.EngineCylinders + '-cyl');
+    if (res.EngineHP) engineParts.push(res.EngineHP + ' hp');
+    var engine = engineParts.join(' ');
+
+    var plantParts = [res.PlantCity, res.PlantState, res.PlantCountry].filter(Boolean);
+    var plant = plantParts.join(', ');
+
+    // Model Year is already shown in the VIN Structure section above, so it is
+    // intentionally omitted here to avoid duplicating it.
+    var rows = [
+        ['Make', res.Make],
+        ['Model', res.Model],
+        ['Trim', res.Trim || res.Series],
+        ['Body Class', res.BodyClass],
+        ['Vehicle Type', res.VehicleType],
+        ['Engine', engine],
+        ['Fuel Type', res.FuelTypePrimary],
+        ['Drive Type', res.DriveType],
+        ['Doors', res.Doors],
+        ['Manufacturer', res.Manufacturer],
+        ['Built In', plant]
+    ];
+
+    var html = '';
+    for (var i = 0; i < rows.length; i++) {
+        var label = rows[i][0], value = rows[i][1];
+        if (value && String(value).trim() && String(value).trim() !== 'Not Applicable') {
+            html += '<div class="decode-item"><span class="decode-label">' + label +
+                    ':</span><span class="decode-value">' + escapeHtml(String(value).trim()) +
+                    '</span></div>';
+        }
+    }
+
+    fields.innerHTML = html;
+    setVpicStatus('', 'hint');
+}
+
+function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+}
+
 function clearDecoder() {
     document.getElementById('vinInput').value = '';
     document.getElementById('decodeResult').style.display = 'none';
     showDecodeMessage('', 'hint');
+    lastVpicVin = '';
+    if (vpicTimer) { clearTimeout(vpicTimer); vpicTimer = null; }
+    showVpicSection(false);
+    var fields = document.getElementById('vpicFields');
+    if (fields) fields.innerHTML = '';
+    setVpicStatus('', 'hint');
 }
