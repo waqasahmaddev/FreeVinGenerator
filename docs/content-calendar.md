@@ -103,7 +103,7 @@ Tier 1 (highest demand - do first):
 Tier 2:
 - [ ] **Generate VIN by Make/Country** - extend the generator to produce a valid VIN with a chosen WMI ("Ford VIN generator", "German VIN"). Testing use + SEO.
 - [ ] **Bulk VIN Validator** - paste a list, see which pass. Dev/QA niche, low competition, backlink-friendly.
-- [ ] **VIN Barcode generator** (Code 39 / Data Matrix) - factory-label formats; complements the QR tool.
+- [x] **VIN Barcode Generator** ✅ BUILT (2026-09-10, pending deploy). Separate tool page `/vin-barcode-generator/` (Code 39 via JsBarcode), matching the QR page style; generate/download/print. Chose separate page over a QR toggle to rank for "vin barcode generator" (506 impressions in Search Console). Wired into mega menu, tools hub, search.json, gulp JS concat; cross-linked with the QR page. Cluster article written: `_posts/2026-09-09-how-to-create-a-vin-barcode.md`. Verified end-to-end in the Jekyll preview (renders, no console errors). TODO: image `assets/blog/how-to-create-a-vin-barcode.jpg`. Data Matrix deferred (needs a heavier lib).
 
 ### Global / international angle (underexploited, big reach)
 The world calls the VIN different things; those markets are barely served.

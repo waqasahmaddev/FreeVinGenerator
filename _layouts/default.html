@@ -46,7 +46,7 @@
 {%- for lib in page.libs %}
 <script src="{{ lib }}"></script>
 {%- endfor %}
-<script src="/assets/app.min.js"></script>
+<script src="/assets/app.min.js?v={{ site.data.assets.js }}"></script>
 {%- if page.notification %}
 <div id="notification" class="notification" role="alert" aria-live="polite">{{ page.notification }}</div>
 {%- endif %}

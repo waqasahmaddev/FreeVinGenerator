@@ -3,6 +3,8 @@ var cleanCSS  = require('gulp-clean-css');
 var uglify    = require('gulp-uglify');
 var rename    = require('gulp-rename');
 var concat = require('gulp-concat');
+var fs = require('fs');
+var crypto = require('crypto');
 
 /* --- Minify CSS --- */
 gulp.task('css', function () {
@@ -20,6 +22,7 @@ gulp.task('js', function () {
         'assets/vin-decoder.js',
         'assets/vin-validator.js',
         'assets/vin-qr-generator.js',
+        'assets/vin-barcode-generator.js',
         'assets/vin-visualizer.js',
         'assets/search.js'
     ])
@@ -29,5 +32,17 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./assets/'));
 });
 
+/* --- Write content-hash versions for cache-busting --- */
+gulp.task('version', function (done) {
+    function hash(path) {
+        return crypto.createHash('md5').update(fs.readFileSync(path)).digest('hex').slice(0, 10);
+    }
+    var css = hash('./assets/app.min.css');
+    var js = hash('./assets/app.min.js');
+    if (!fs.existsSync('./_data')) fs.mkdirSync('./_data');
+    fs.writeFileSync('./_data/assets.yml', 'css: "' + css + '"\njs: "' + js + '"\n');
+    done();
+});
+
 /* --- Default Task --- */
-gulp.task('default', gulp.parallel('css', 'js'));
+gulp.task('default', gulp.series(gulp.parallel('css', 'js'), 'version'));

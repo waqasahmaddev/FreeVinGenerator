@@ -379,6 +379,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', handleScroll);
 
+    initCustomSelects();
+
     // Make article/content tables horizontally scrollable on small screens
     // by wrapping each in a scroll container (kramdown emits bare <table>).
     var tables = document.querySelectorAll('.content-section table');
@@ -453,6 +455,132 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+
+// Upgrade any <select class="fancy"> into a brand-styled, accessible dropdown.
+// The original <select> stays in the DOM (hidden) so its value + change events
+// keep working for the tool scripts that read it.
+function initCustomSelects() {
+    var selects = document.querySelectorAll('select.fancy');
+    Array.prototype.forEach.call(selects, function (sel) {
+        if (sel.dataset.enhanced) return;
+        sel.dataset.enhanced = '1';
+
+        var wrap = document.createElement('div');
+        wrap.className = 'custom-select';
+        sel.parentNode.insertBefore(wrap, sel);
+        wrap.appendChild(sel);
+        sel.classList.add('native-hidden');
+        sel.setAttribute('tabindex', '-1');
+        sel.setAttribute('aria-hidden', 'true');
+
+        var uid = sel.id || ('sel' + Math.random().toString(36).slice(2, 8));
+
+        var trigger = document.createElement('button');
+        trigger.type = 'button';
+        trigger.className = 'cs-trigger';
+        trigger.id = 'cs-trigger-' + uid;
+        trigger.setAttribute('aria-haspopup', 'listbox');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.innerHTML = '<span class="cs-label"></span>' +
+            '<svg class="cs-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+
+        var lbl = sel.id ? document.querySelector('label[for="' + sel.id + '"]') : null;
+        if (lbl) lbl.setAttribute('for', trigger.id);
+
+        var panel = document.createElement('ul');
+        panel.className = 'cs-panel';
+        panel.setAttribute('role', 'listbox');
+        panel.hidden = true;
+
+        Array.prototype.forEach.call(sel.options, function (o, i) {
+            var li = document.createElement('li');
+            li.className = 'cs-option' + (o.selected ? ' is-selected' : '');
+            li.setAttribute('role', 'option');
+            li.setAttribute('aria-selected', o.selected ? 'true' : 'false');
+            li.id = 'cs-opt-' + uid + '-' + i;
+            li.innerHTML = '<span></span>' +
+                '<svg class="cs-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+            li.firstChild.textContent = o.textContent;
+            panel.appendChild(li);
+        });
+
+        wrap.appendChild(trigger);
+        wrap.appendChild(panel);
+
+        var labelSpan = trigger.querySelector('.cs-label');
+        var activeIndex = sel.selectedIndex;
+
+        function optionEls() { return panel.querySelectorAll('.cs-option'); }
+        function syncLabel() { labelSpan.textContent = sel.options[sel.selectedIndex].textContent; }
+        function isOpen() { return !panel.hidden; }
+
+        function setActive(i) {
+            var els = optionEls();
+            if (i < 0) i = 0;
+            if (i > els.length - 1) i = els.length - 1;
+            activeIndex = i;
+            Array.prototype.forEach.call(els, function (e, idx) {
+                e.classList.toggle('active', idx === i);
+            });
+            if (els[i]) {
+                trigger.setAttribute('aria-activedescendant', els[i].id);
+                els[i].scrollIntoView({ block: 'nearest' });
+            }
+        }
+
+        function open() {
+            panel.hidden = false;
+            wrap.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+            setActive(sel.selectedIndex);
+        }
+        function close() {
+            panel.hidden = true;
+            wrap.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.removeAttribute('aria-activedescendant');
+        }
+        function choose(i) {
+            var els = optionEls();
+            if (!els[i]) return;
+            sel.selectedIndex = i;
+            sel.dispatchEvent(new Event('change', { bubbles: true }));
+            Array.prototype.forEach.call(els, function (e, idx) {
+                e.classList.toggle('is-selected', idx === i);
+                e.setAttribute('aria-selected', idx === i ? 'true' : 'false');
+            });
+            syncLabel();
+            close();
+            trigger.focus();
+        }
+
+        syncLabel();
+
+        trigger.addEventListener('click', function () { isOpen() ? close() : open(); });
+        trigger.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowDown') { e.preventDefault(); isOpen() ? setActive(activeIndex + 1) : open(); }
+            else if (e.key === 'ArrowUp') { e.preventDefault(); isOpen() ? setActive(activeIndex - 1) : open(); }
+            else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); isOpen() ? choose(activeIndex) : open(); }
+            else if (e.key === 'Escape') { if (isOpen()) { e.preventDefault(); close(); } }
+            else if (e.key === 'Tab') { close(); }
+        });
+
+        panel.addEventListener('click', function (e) {
+            var li = e.target.closest('.cs-option');
+            if (!li) return;
+            choose(Array.prototype.indexOf.call(optionEls(), li));
+        });
+        panel.addEventListener('mousemove', function (e) {
+            var li = e.target.closest('.cs-option');
+            if (!li) return;
+            setActive(Array.prototype.indexOf.call(optionEls(), li));
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!wrap.contains(e.target)) close();
+        });
+    });
+}
 
 function smoothScrollToContent() {
     const contentSection = document.querySelector('.content-section');

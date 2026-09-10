@@ -17,6 +17,7 @@ permalink: /search.json
   { "type": "Tool", "title": "VIN Validator", "url": "/vin-validator/", "category": "Tool", "desc": "Check if a VIN is valid: length, characters, and check-digit math.", "body": "" },
   { "type": "Tool", "title": "Bulk VIN Generator", "url": "/bulk-vin-generator/", "category": "Tool", "desc": "Generate hundreds of valid VINs at once and export as CSV or TXT.", "body": "" },
   { "type": "Tool", "title": "VIN QR Code Generator", "url": "/vin-qr-code-generator/", "category": "Tool", "desc": "Turn a VIN into a scannable, downloadable QR code.", "body": "" },
+  { "type": "Tool", "title": "VIN Barcode Generator", "url": "/vin-barcode-generator/", "category": "Tool", "desc": "Turn a VIN into a scannable Code 39 barcode, the factory-label format.", "body": "code 39 linear barcode vin label door jamb scanner" },
   { "type": "Tool", "title": "VIN Breakdown Visualizer", "url": "/vin-breakdown-visualizer/", "category": "Tool", "desc": "See every VIN position mapped to its meaning in an interactive diagram.", "body": "" },
   { "type": "Page", "title": "What is a VIN?", "url": "/what-is-a-vin/", "category": "Guide", "desc": "A complete guide to how Vehicle Identification Numbers are structured.", "body": "" },
   { "type": "Page", "title": "VIN Country & Manufacturer (WMI) Codes", "url": "/wmi-codes/", "category": "Reference", "desc": "Look up VIN country codes and manufacturer WMI codes, from Ford to Ferrari.", "body": "world manufacturer identifier country codes prefix Ford Honda Toyota BMW" },
