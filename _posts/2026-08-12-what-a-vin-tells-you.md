@@ -43,7 +43,7 @@ Want to understand the number instead of just feeding it to a tool? Two of our g
 
 ## See It in Action
 
-The fastest way to learn what a VIN carries is to decode a real one. Our [VIN Decoder](/vin-decoder/) breaks out the country, maker, model year, and check-digit result on the spot. For a visual version, the [VIN Breakdown Visualizer](/vin-breakdown-visualizer/) maps every character onto the code so the three sections stand out.
+The fastest way to learn what a VIN carries is to decode a real one. If you do not have a VIN in front of you, our [free VIN generator](/) will spin up a valid one to experiment with. Our [VIN Decoder](/vin-decoder/) then breaks out the country, maker, model year, and check-digit result on the spot. For a visual version, the [VIN Breakdown Visualizer](/vin-breakdown-visualizer/) maps every character onto the code so the three sections stand out.
 
 Treat the VIN as what it is: a rock-solid record of who, where, and when, plus a coded sketch of the vehicle. For the make, the plant, and the year, the number never lies. For the color and the history, you take the VIN and go one step further.
 

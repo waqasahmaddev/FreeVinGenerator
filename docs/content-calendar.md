@@ -2,7 +2,9 @@
 
 Purpose: a ready backlog of article topics so there is always something to publish. Cadence: ~2 articles per week (one batch, published Thursday/Friday). Every article follows the writing rules in `CLAUDE.md` section 8 (human voice, no em dashes, no AI filler, ~800-1000 words, real tables/examples, 2-4 internal links + a "Keep Reading" section, featured image at `assets/blog/<slug>.jpg` 1200x630).
 
-## Already published (13 articles + reference)
+## Already published (31 articles live as of 2026-09-18 + reference + barcode article)
+<!-- List below shows the original first 13; Weeks 2-9 of the backlog (Ford/Toyota/Honda/Chevrolet/BMW/Nissan decodes, engine/manufacture-date, check-digit, engine-number, accident/flood/odometer/free-vs-paid history, truck/European import) are all LIVE too, plus the QR + barcode + real-decoder cluster articles. -->
+
 
 1. How to Read a VIN: What All 17 Characters Mean
 2. What a VIN Tells You: Decoding Make, Model, and Year
@@ -19,7 +21,9 @@ Purpose: a ready backlog of article topics so there is always something to publi
 13. How to Generate a Random VIN Number (for Testing) — *tool-cluster page (Aug 22)*
 - Reference page: `/wmi-codes/` (VIN country + manufacturer codes)
 
-**Note on #12-13 (tool clusters):** these two support the QR + Generator tools directly (funnel readers to the tools and give the tools indexable supporting content). They were NOT from the 12-week backlog below - they were added to build topic clusters around the tools. **Open follow-up:** the tool pages do NOT yet link back to these articles. Add reverse "related reading" links from `/` and `/vin-qr-code-generator/` (and other tools) to complete the clusters - this is the top priority before the next content batch.
+**Note on #12-13 (tool clusters):** these two support the QR + Generator tools directly (funnel readers to the tools and give the tools indexable supporting content). They were NOT from the 12-week backlog below - they were added to build topic clusters around the tools. ✅ DONE: reverse "Related Guides" links added from `/`, `/vin-qr-code-generator/`, and `/bulk-vin-generator/` back to their cluster articles.
+
+**STATUS (2026-09-18): all posts through Week 9 are LIVE — 31 posts published, all images added, all deployed.** Tools now number 7 (added the VIN Barcode Generator) plus `/wmi-codes/`. Remaining backlog: Weeks 1, 10, 11, 12 (below), still unwritten. Next big on-page win: generator page title/CTR optimization (see Growth strategy).
 
 ## The 12-week backlog (2 per week)
 
@@ -33,7 +37,7 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - ✅ How to Decode a Ford VIN - links: Decoder, /wmi-codes/, how-to-read-a-vin
 - ✅ How to Decode a Toyota VIN - links: Decoder, /wmi-codes/
 
-**Week 3** ✅ written 2026-08-28 (images pending - see note)
+**Week 3** ✅ LIVE (published Aug 27-28)
 - ✅ How to Tell What Engine a Car Has From the VIN - links: Decoder, what-a-vin-tells-you
 - ✅ How to Find a Car's Manufacture Date From the VIN - links: model-year-chart, Decoder
 
@@ -49,21 +53,21 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - ✅ How to Check a Car's Accident History by VIN - links: stolen-by-vin, salvage-title, Decoder
 - ✅ How to Check for Flood Damage by VIN - links: salvage-title, history articles
 
-**Week 7** ✅ written, dated Sep 7-8 (images pending - see note)
+**Week 7** ✅ LIVE (published Sep 7-8)
 - ✅ How to Decode a BMW VIN - links: Decoder, /wmi-codes/
 - ✅ How to Decode a Nissan VIN - links: Decoder, /wmi-codes/
 
-**Week 8** ✅ written, dated Sep 9-10 (images pending - see note)
+**Week 8** ✅ LIVE (published Sep 9-10)
 - ✅ Free vs. Paid VIN History Reports: What Each One Gives You - links: stolen-by-vin, recalls, salvage-title
 - ✅ How to Check a Car's Odometer/Mileage History by VIN - links: history articles, Decoder
 
-**Week 9** ✅ written, dated Sep 11-12 (images pending - see note)
+**Week 9** ✅ LIVE (published Sep 11-12)
 - ✅ How to Decode a Truck VIN - links: Decoder, /wmi-codes/, Ford, Chevrolet
 - ✅ How to Decode a European Import VIN - links: Decoder, /wmi-codes/, BMW, check-digit
 
-**Week 10**
-- How to Read a Car's Window Sticker (and Find It by VIN) - links: what-a-vin-tells-you, Decoder
-- How to Check a Car's Options and Features by VIN - links: what-a-vin-tells-you, Decoder
+**Week 10** ✅ written, dated Sep 15-16 (images pending)
+- ✅ How to Read a Car's Window Sticker (and Find It by VIN) - links: what-a-vin-tells-you, Decoder, where-to-find-your-vin
+- ✅ How to Check a Car's Options and Features by VIN - links: window-sticker, Decoder, engine article
 
 **Week 11** (developer angle - unique niche, strong for backlinks)
 - How to Generate Test VINs for Software Testing - links: Generator, Bulk Generator, Validator

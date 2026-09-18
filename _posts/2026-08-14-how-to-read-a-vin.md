@@ -71,7 +71,7 @@ Want to try decoding your own car? The VIN shows up in a few reliable spots:
 
 ## Read One for Yourself
 
-The pattern sticks fastest when you decode a real number. Paste any 17-character VIN into our free [VIN Decoder](/vin-decoder/) and it breaks out the country, maker, model year, and check-digit result on the spot. Prefer to see it laid out visually? The [VIN Breakdown Visualizer](/vin-breakdown-visualizer/) maps every position onto the code so you can watch the sections light up.
+The pattern sticks fastest when you decode a real number. No VIN on hand? Use our [random VIN generator](/) to make a valid one, then read it position by position. Or paste any 17-character VIN into our free [VIN Decoder](/vin-decoder/) and it breaks out the country, maker, model year, and check-digit result on the spot. Prefer to see it laid out visually? The [VIN Breakdown Visualizer](/vin-breakdown-visualizer/) maps every position onto the code so you can watch the sections light up.
 
 After you work through a handful, the rhythm feels obvious. Three characters for the maker, five for the vehicle, one to check the math, one for the year, one for the plant, and six for the serial. Seventeen characters, and now none of them are a mystery.
 
