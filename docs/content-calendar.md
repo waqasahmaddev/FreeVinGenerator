@@ -23,7 +23,7 @@ Purpose: a ready backlog of article topics so there is always something to publi
 
 **Note on #12-13 (tool clusters):** these two support the QR + Generator tools directly (funnel readers to the tools and give the tools indexable supporting content). They were NOT from the 12-week backlog below - they were added to build topic clusters around the tools. ✅ DONE: reverse "Related Guides" links added from `/`, `/vin-qr-code-generator/`, and `/bulk-vin-generator/` back to their cluster articles.
 
-**STATUS (2026-09-18): all posts through Week 9 are LIVE — 31 posts published, all images added, all deployed.** Tools now number 7 (added the VIN Barcode Generator) plus `/wmi-codes/`. Remaining backlog: Weeks 1, 10, 11, 12 (below), still unwritten. Next big on-page win: generator page title/CTR optimization (see Growth strategy).
+**STATUS (2026-09-18): all posts through Week 10 are LIVE — 33 posts published, all images added, all deployed.** Tools now number 7 (added the VIN Barcode Generator) plus `/wmi-codes/`. Remaining backlog: Weeks 1, 10, 11, 12 (below), still unwritten. Next big on-page win: generator page title/CTR optimization (see Growth strategy).
 
 ## The 12-week backlog (2 per week)
 
@@ -65,13 +65,13 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - ✅ How to Decode a Truck VIN - links: Decoder, /wmi-codes/, Ford, Chevrolet
 - ✅ How to Decode a European Import VIN - links: Decoder, /wmi-codes/, BMW, check-digit
 
-**Week 10** ✅ written, dated Sep 15-16 (images pending)
+**Week 10** ✅ LIVE (published Sep 15-16)
 - ✅ How to Read a Car's Window Sticker (and Find It by VIN) - links: what-a-vin-tells-you, Decoder, where-to-find-your-vin
 - ✅ How to Check a Car's Options and Features by VIN - links: window-sticker, Decoder, engine article
 
-**Week 11** (developer angle - unique niche, strong for backlinks)
-- How to Generate Test VINs for Software Testing - links: Generator, Bulk Generator, Validator
-- How to Validate a VIN in Code: The Check-Digit Algorithm - links: Validator, check-digit article
+**Week 11** (developer angle - unique niche, strong for backlinks) ✅ written, dated Sep 22-23 (images pending)
+- ✅ How to Generate Test VINs for Software Testing - links: Generator, Bulk Generator, Validator
+- ✅ How to Validate a VIN in Code: The Check-Digit Algorithm (working JS + Python, verified) - links: Validator, check-digit article
 
 **Week 12**
 - The History of the VIN: Why 17 Characters? - links: how-to-read-a-vin, what-is-a-vin
