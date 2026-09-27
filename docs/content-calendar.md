@@ -73,9 +73,11 @@ Pick the pair each week, write, add a 1200x630 image, publish Thursday. Titles a
 - ✅ How to Generate Test VINs for Software Testing - links: Generator, Bulk Generator, Validator
 - ✅ How to Validate a VIN in Code: The Check-Digit Algorithm (working JS + Python, verified) - links: Validator, check-digit article
 
-**Week 12**
-- The History of the VIN: Why 17 Characters? - links: how-to-read-a-vin, what-is-a-vin
-- How to Decode a Classic (Pre-1981) Car VIN - links: how-to-read-a-vin, model-year-chart
+**Week 12** ✅ written, dated Sep 24-25 (images pending)
+- ✅ The History of the VIN: Why 17 Characters? - links: how-to-read-a-vin, /what-is-a-vin/, check-digit
+- ✅ How to Decode a Classic (Pre-1981) Car VIN - links: how-to-read-a-vin, model-year-chart, history-of-the-vin
+
+**🎉 12-week backlog COMPLETE.** Remaining unwritten: Week 1 pair only (Free VIN Check, Why Won't My VIN Decode) + the "Beyond week 12" ideas below.
 
 ## Tool-cluster track (support each tool with 1-2 articles, then link both ways)
 The QR + Generator clusters are started (#12-13). Finish the pattern for the other tools:
