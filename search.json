@@ -21,6 +21,7 @@ permalink: /search.json
   { "type": "Tool", "title": "VIN Breakdown Visualizer", "url": "/vin-breakdown-visualizer/", "category": "Tool", "desc": "See every VIN position mapped to its meaning in an interactive diagram.", "body": "" },
   { "type": "Page", "title": "What is a VIN?", "url": "/what-is-a-vin/", "category": "Guide", "desc": "A complete guide to how Vehicle Identification Numbers are structured.", "body": "" },
   { "type": "Page", "title": "VIN Country & Manufacturer (WMI) Codes", "url": "/wmi-codes/", "category": "Reference", "desc": "Look up VIN country codes and manufacturer WMI codes, from Ford to Ferrari.", "body": "world manufacturer identifier country codes prefix Ford Honda Toyota BMW" },
+  { "type": "Page", "title": "What a VIN Is Called Around the World", "url": "/vin-names-around-the-world/", "category": "Reference", "desc": "What a VIN is called by country: chassis number, frame number, FIN, and more.", "body": "chassis number frame number shadai bango FIN Fahrzeug-Identifizierungsnummer VIN by country UK India Philippines Japan Germany Australia Nigeria Pakistan engine number" },
   { "type": "Page", "title": "All VIN Tools", "url": "/tools/", "category": "Page", "desc": "Every free VIN tool in one place.", "body": "" },
   { "type": "Page", "title": "VIN Blog", "url": "/blog/", "category": "Page", "desc": "Guides and articles about reading, decoding, and checking VINs.", "body": "" }
 ]
